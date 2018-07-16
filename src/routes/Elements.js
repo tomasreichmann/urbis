@@ -8,21 +8,21 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Chip from '@material-ui/core/Chip';
 
-import IconFire from '../icons/IconFire';
-import IconWater from '../icons/IconWater';
-import IconLightning from '../icons/IconLightning';
-import IconFrost from '../icons/IconFrost';
-import IconRock from '../icons/IconRock';
-import IconHex from '../icons/IconHex';
+import IconFire from '../components/icons/IconFire';
+import IconWater from '../components/icons/IconWater';
+import IconLightning from '../components/icons/IconLightning';
+import IconFrost from '../components/icons/IconFrost';
+import IconRock from '../components/icons/IconRock';
+import IconHex from '../components/icons/IconHex';
 
-import IconWet from '../icons/IconWet';
-import IconBurning from '../icons/IconBurning';
-import IconFrozen from '../icons/IconFrozen';
-import IconCursed from '../icons/IconCursed';
-import IconLife from '../icons/IconLife';
-import IconRegenerating from '../icons/IconRegenerating';
+import IconWet from '../components/icons/IconWet';
+import IconBurning from '../components/icons/IconBurning';
+import IconFrozen from '../components/icons/IconFrozen';
+import IconCursed from '../components/icons/IconCursed';
+import IconLife from '../components/icons/IconLife';
+import IconRegenerating from '../components/icons/IconRegenerating';
 
-import Icon from '../icons/Icon';
+import Icon from '../components/icons/Icon';
 
 const styles = theme => ({
   main: {
@@ -195,7 +195,7 @@ function Elements(props) {
       <Typography gutterBottom>The spell targets 1 field per <IconRock /> spent up to 2 fields away of the caster.</Typography>
       <Typography gutterBottom>If target zone is empty, summons a rock that shields fields from line, cone and spread spells.</Typography>
       <Typography gutterBottom>Any non-permanent target statuses are removed.</Typography>
-      <Typography gutterBottom>The rock is immune to <IconFire /> damage.</Typography>
+      <Typography gutterBottom>The rock is immune to the <IconBurning /> status and <IconFire /> damage.</Typography>
       <Typography gutterBottom>The rock is destroyed upon taking 1 damage.</Typography>
 
       <Divider className={classes.divider} />
