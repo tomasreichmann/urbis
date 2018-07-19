@@ -5,51 +5,33 @@ import withRoot from '../src/withRoot';
 
 import Navigation from '../src/components/Navigation';
 import Statuses from '../src/routes/Statuses';
-import Spells from '../src/routes/Spells';
-import Resources from '../src/routes/Resources';
 
 const styles = theme => ({
   page: {
-    padding: theme.spacing.unit * 10,
+    margin: theme.spacing.unit * 10,
+    '@media print': {
+      margin: 0,
+    },
   },
 });
 
-class Index extends React.Component {
-  state = {
-    open: false,
-  };
-
-  handleClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
-
+class StatusesPage extends React.Component {
   render() {
     const { classes } = this.props;
-    const { open } = this.state;
 
     return (
       <div className={classes.root}>
         <Navigation />
         <div className={classes.page} >
           <Statuses />
-          <Spells />
-          <Resources />
         </div>
       </div>
     );
   }
 }
 
-Index.propTypes = {
+StatusesPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(Index));
+export default withRoot(withStyles(styles)(StatusesPage));

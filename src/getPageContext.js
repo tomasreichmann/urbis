@@ -20,6 +20,9 @@ const theme = createMuiTheme({
       dark: brown[700],
     },
   },
+  typography: {
+    fontSize: 10
+  }
 });
 
 function createPageContext() {

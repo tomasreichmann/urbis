@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import grey from '@material-ui/core/colors/grey';
 import cls from 'classnames';
 
-const styles = ({ iconSize = 3 }) => theme => ({
+const styles = ({ iconSize = 2 }) => theme => ({
   wrapper: {
     display: 'inline-block',
   },
@@ -37,12 +36,15 @@ const styles = ({ iconSize = 3 }) => theme => ({
 
 const Icon = (props) => {
   const { classes, variant, label, iconSize, hasCircle, iconUri, component, className, count } = props;
-  const iconImage = (isFirst) => <img src={iconUri} className={cls(
-    classes.icon,
-    isFirst ? classes.iconFirst : undefined,
-    (label && !hasCircle) ? classes.withLabel : undefined
-  )} />;
-  const iconImages = new Array(count).fill(null).map( (_, index) => iconImage(index === 0) );
+  const iconImage = (index) => {
+    const isFirst = index === 0;
+    return (<img key={index} src={iconUri} className={cls(
+      classes.icon,
+      isFirst ? classes.iconFirst : undefined,
+      (label && !hasCircle) ? classes.withLabel : undefined
+    )} />);
+  }
+  const iconImages = new Array(count).fill(null).map( (_, index) => iconImage(index) );
   const icon = hasCircle
     ? <span className={cls(classes.circle, label
       ? classes.withLabel
@@ -50,7 +52,7 @@ const Icon = (props) => {
     : iconImages;
 
   return (
-    <Typography variant={variant} component={component} className={cls(classes.wrapper, className)}>{icon}{label}</Typography>
+    <span className={cls(classes.wrapper, className)}>{icon}{label}</span>
   );
 }
 
@@ -68,7 +70,7 @@ Icon.defaultProps = {
   variant: undefined,
   className: undefined,
   iconUri: '/static/unknown.png',
-  iconSize: 3,
+  iconSize: 2,
   count: 1,
   label: '?',
   component: 'span',

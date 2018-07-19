@@ -11,7 +11,7 @@ import IconFrozen from '../components/icons/IconFrozen';
 import IconCursed from '../components/icons/IconCursed';
 import IconLife from '../components/icons/IconLife';
 
-export const getIconProps = ([match, label]) => (label ? '(' + label + ')' : '');
+export const getIconProps = ([match, label]) => (label ? {label} : {});
 
 export const ruleList = [
   {
@@ -76,23 +76,23 @@ export const ruleList = [
   },
 ]
 
-export const getMatch = (expression) => {
+export const getMatch = (expression, extraProps) => {
   for (let ruleIndex = 0; ruleIndex < ruleList.length; ruleIndex++) {
     const rule = ruleList[ruleIndex];
     const match = expression.match(rule.match);
     const Element = rule.component;
     if (match) {
-      return <Element {...rule.getProps(match)} />;
+      return <Element {...rule.getProps(match)} {...extraProps}/>;
     }
   }
   return null;
 }
 
-export const richText = (text) => {
+export const richText = (text, extraProps) => {
   const output = [];
   const matches = text.split(/\[([^\]]*)\]/);
   matches.forEach( (match, matchIndex) => {
-    output.push(matchIndex % 2 === 1 && getMatch(match) || match );
+    output.push(matchIndex % 2 === 1 && getMatch(match, extraProps) || match );
   })
   return <span>{output.map((outputItem, outputIndex) => <span key={outputIndex}>{outputItem}</span>)}</span>;
 };

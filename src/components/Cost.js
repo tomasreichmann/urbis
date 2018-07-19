@@ -16,12 +16,8 @@ import IconCursed from './icons/IconCursed';
 import IconLife from './icons/IconLife';
 
 const styles = {
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+  main: {
+    whiteSpace: 'nowrap',
   },
 };
 
@@ -44,13 +40,14 @@ function Cost(props) {
 
   const costItems = Object.keys(cost)
     .filter(costKey => !!cost[costKey])
+    .sort()
     .map((costKey, costIndex) => {
       const CostElement = componentMap[costKey];
       return CostElement ? <CostElement key={costIndex} count={cost[costKey]} label={null} {...otherProps}/> : null;
     });
 
   return (
-    <span>
+    <span className={classes.main}>
       { costItems }
     </span>
   );

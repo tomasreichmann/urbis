@@ -60,7 +60,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'Casts a splash of water that sets the [wet] status on a fields and their targets up to 2 fields away from the caster and moves target 1 field in any direction.'
+    description: 'Casts a splash of water that sets the [wet] status on a fields and it\' target up to 2 fields away from the caster and moves target 1 field in any direction.'
   },
   {
     name: 'Tidal wave',
@@ -92,12 +92,12 @@ export const spells = [
     description: 'Casts an explosion of water that sets the [wet] status on all the fields and their targets spreading 2 fields away from it\`s center anywhere on the battlefield and moves targets 1 field away from the center.'
   },
   {
-    name: 'Rain',
+    name: 'Tsunami',
     cost: { water: 5 },
     target: {
       shape: ALL_FIELDS
     },
-    description: 'Casts a rain of water that sets the [wet] status on all the fields and their targets on the entire battlefield.'
+    description: 'Casts a wall of water quickly moving across battlefield that sets the [wet] status on all the fields and their targets on the entire battlefield and move them on field in a single direction of casters choice.'
   },
   {
     name: 'Electric jolt',
@@ -107,7 +107,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'Casts a lightning arc to a single target up to 2 fields away from the caster that does [lightning|1] damage. If the target field is [wet], the damage also spreads to any targets that stand on [wet] fields that are connected to the target field with an unbroken chain of [wet] fields. [wet] targets receive an extra [lightning|1] damage.'
+    description: 'Casts a lightning arc to a single target up to 2 fields away from the caster that does [lightning|1] damage. [wet] target receives an extra [lightning|1] damage.'
   },
   {
     name: 'Tesla coil',
@@ -119,7 +119,7 @@ export const spells = [
       spread: 1,
       excludeCaster: true,
     },
-    description: 'Casts a lightning arc to all targets 1 field away from the caster that does [lightning|1] damage. If any of the target fields are [wet], the damage also spreads to any targets that stand on [wet] fields that are connected to the target field with an unbroken chain of [wet] fields. [wet] targets receive an extra [lightning|1] damage. No target can be damaged twice with one casting of this spell.'
+    description: 'Casts a lightning arc to all targets 1 field away from the caster that does [lightning|1] damage. [wet] targets receive an extra [lightning|1] damage.'
   },
   {
     name: 'Lighning bolt',
@@ -128,7 +128,7 @@ export const spells = [
     target: {
       shape: LINE,
     },
-    description: 'Casts a lightning arc in a line in any direction from the caster to the end of battlefield that does [lightning|1] damage. If any of the target fields are [wet], the damage also spreads to any targets that stand on [wet] fields that are connected to the target field with an unbroken chain of [wet] fields. [wet] targets receive an extra [lightning|1] damage. No target can be damaged twice with one casting of this spell.'
+    description: 'Casts a lightning arc in a line in any direction from the caster to the end of battlefield that does [lightning|1] damage. [wet] targets receive an extra [lightning|1] damage.'
   },
   {
     name: 'Chain lightning',
@@ -141,7 +141,7 @@ export const spells = [
         maxRange: 2
       }
     },
-    description: 'Casts a lightning arc to a single target anywhere on the battlefield that does [lightning|1] damage, then jumps 2x to another target up to 2 fields away from the previous target. If any of the target fields are [wet], the damage also spreads to any targets that stand on [wet] fields that are connected to the target field with an unbroken chain of [wet] fields. [wet] targets receive an extra [lightning|1] damage. No target can be damaged twice with one casting of this spell.'
+    description: 'Casts a lightning arc to a single target anywhere on the battlefield that does [lightning|1] damage, then jumps 2x to another target up to 2 fields away from the previous target. [wet] targets receive an extra [lightning|1] damage. No target can be damaged twice with one casting of this spell.'
   },
   {
     name: 'Lightning strike',
@@ -150,7 +150,7 @@ export const spells = [
     target: {
       shape: FIELD
     },
-    description: 'Casts a lightning strike to a single target anywhere on the battlefield that does [lightning|3] damage. If the target field is [wet], the damage also spreads to any targets that stand on [wet] fields that are connected to the target field with an unbroken chain of [wet] fields. [wet] targets receive an extra [lightning|1] damage.'
+    description: 'Casts a lightning strike to a single target anywhere on the battlefield that does [lightning|3] damage. If the target field is [wet], any targets that stand on [wet] fields that are connected to the target field with an unbroken chain of [wet] fields receive [lightning|1] damage. [wet] targets receive an extra [lightning|1] damage.'
   },
   {
     name: 'Chilling gaze',
@@ -346,24 +346,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target anywhere on the battlefield is brought back to life on the same field it died and has damage immunity untill its turn.'
-  },
-  {
-    name: 'Teleport',
-    cost: { lightning: 1, life: 1 },
-    target: {
-      shape: FIELD
-    },
-    description: 'The caster is teleported to any field on the map. If the target field is occupied, the contents is teleported to the caster\'s original field.'
-  },
-  {
-    name: 'Telekinesis',
-    cost: { lightning: 1, water: 1, hex: 1 },
-    target: {
-      shape: FIELD,
-      maxRange: 2
-    },
-    description: 'Moves a target up to two fields away from the caster to an unoccupied field up to 2 fields away from the target.'
+    description: 'A target anywhere on the battlefield is brought back to life on the same field it died and has damage immunity untill its turn. If cast on self, it will fully heal you if you drop below 0 health thus preventing.'
   },
   {
     name: 'Curse',
@@ -391,5 +374,22 @@ export const spells = [
       maxRange: 2
     },
     description: 'All statuses and immunities are removed from the whole battlefield and it\'s targets.'
+  },
+  {
+    name: 'Teleport',
+    cost: { lightning: 1, life: 1 },
+    target: {
+      shape: FIELD
+    },
+    description: 'The caster is teleported to any field on the map. If the target field is occupied, the contents is teleported to the caster\'s original field.'
+  },
+  {
+    name: 'Telekinesis',
+    cost: { lightning: 1, water: 1, hex: 1 },
+    target: {
+      shape: FIELD,
+      maxRange: 2
+    },
+    description: 'Moves a target up to two fields away from the caster to an unoccupied field up to 2 fields away from the target.'
   },
 ];
