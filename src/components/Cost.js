@@ -35,6 +35,23 @@ const componentMap = {
   life: IconLife,
 };
 
+const CostComponent = ({costKey, costValue, ...otherProps}) => {
+  const CostElement = componentMap[costKey];
+  const valueArray = Array.isArray(costValue) ? costValue : [costValue];
+
+  return (<span>
+    <CostElement key="min" count={valueArray[0]} label={null} {...otherProps}/>
+    {
+      valueArray.length > 1
+        ? [
+          '-',
+          <CostElement key="max" count={valueArray[1]} label={null} {...otherProps}/>
+        ]
+        : null
+    }
+  </span>)
+}
+
 function Cost(props) {
   const { classes, cost, ...otherProps } = props;
 
@@ -43,7 +60,10 @@ function Cost(props) {
     .sort()
     .map((costKey, costIndex) => {
       const CostElement = componentMap[costKey];
-      return CostElement ? <CostElement key={costIndex} count={cost[costKey]} label={null} {...otherProps}/> : null;
+      const costValue = cost[costKey];
+      return CostElement
+        ? <CostComponent key={costIndex} costKey={costKey} costValue={costValue} {...otherProps}/>
+        : null;
     });
 
   return (

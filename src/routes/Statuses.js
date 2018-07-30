@@ -44,19 +44,14 @@ function Statuses(props) {
     <Card className={classes.main}>
       <CardContent className={classes.mainContent}>
         <div className={classes.list}>
-          {statuses.map(({name, target, zone}, index) => (<div key={index} className={classes.listItem}>
+          {statuses.map(({name, effects}, index) => (<div key={index} className={classes.listItem}>
             <Typography gutterBottom variant="title" component="h2">
               {richText(name, {iconSize: 3})}
             </Typography>
 
-            <Typography variant="subheading" gutterBottom>Target</Typography>
-            {target.map((feature, featureIndex) => (<Typography key={featureIndex} gutterBottom >
-              {richText(feature)}
-            </Typography>) )}
-
-            <Typography variant="subheading" gutterBottom>Zone</Typography>
-            {zone.map((feature, featureIndex) => (<Typography key={featureIndex} gutterBottom >
-              {richText(feature)}
+            <Typography variant="subheading" gutterBottom>Effects</Typography>
+            {effects.map((effect, effectIndex) => (<Typography key={effectIndex} gutterBottom >
+              {richText(effect)}
             </Typography>) )}
           </div>))}
         </div>

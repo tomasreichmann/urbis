@@ -17,7 +17,7 @@ export const spells = [
     description: 'Casts a flare that sets the [burning] status on a field and it\'s target up to 2 fields away from the caster.'
   },
   {
-    name: 'Burning hands',
+    name: 'Grilling hands',
     cost: { fire: 2 },
     target: {
       shape: CONE,
@@ -70,7 +70,7 @@ export const spells = [
       size: 2,
       range: 0
     },
-    description: 'Casts a stream of water that sets the [wet] status on all the fields and their targets in an a small arc 2 fields away from the caster and moves tarets 1 field away from the caster.'
+    description: 'Casts a stream of water that sets the [wet] status on all the fields and their targets in an a small arc 2 fields away from the caster and moves tarets 1 field away from the caster. If it\s not clear where to move, the caster decides which field to move to.'
   },
   {
     name: 'Water bomb',
@@ -174,7 +174,7 @@ export const spells = [
     description: 'Casts a wave of ice that does [frost|1] damage to all the fields and their targets in an a small arc 2 fields away from the caster. If any affected fields or targets are [wet] it replaces their [wet] status with the [frost] status.'
   },
   {
-    name: 'Frost ball',
+    name: 'Snow ball',
     cost: { frost: 3 },
     damage: { frost: 1 },
     target: {
@@ -204,43 +204,52 @@ export const spells = [
     description: 'Casts a blizzard that does [frost|1] damage to all the fields and their targets on the entire battlefield. If any affected fields or targets are [wet] it replaces their [wet] status with the [frost] status.'
   },
   {
-    name: 'Summon a rock',
-    cost: { rock: 1 },
+    name: 'Summon rocks',
+    cost: { rock: [1, 4] },
     target: {
       shape: FIELD,
       maxRange: 2
     },
-    description: 'Summons a rock on an unoccupied field up to 2 fields away from the caster. The rock blocks movement and spells that target fields in a line, cone or spread. It is immune to fire and frost damage, but is destroyed when it takes 1 damage.'
+    description: 'Summons rocks on unoccupied fields up to 2 fields away from the caster equal to the number of rock elements used. The rocks block movement. They are immune to all statuses, extra immunities. Rocks can only be destroyed by [lightning|1] damage, dispel or spells that explicitly target rocks.'
   },
-  {
-    name: 'Summon two rocks',
-    cost: { rock: 2 },
-    target: {
-      count: 2,
-      shape: FIELD,
-      maxRange: 2
-    },
-    description: 'Summons 2 rocks on unoccupied fields up to 2 fields away from the caster. The rocks block movement and spells that target fields in a line, cone or spread. They are immune to all statuses, extra immunities, fire and frost damage, but are destroyed when they take 1 damage of other type.'
-  },
-  {
-    name: 'Summon three rocks',
-    cost: { rock: 3 },
-    target: {
-      count: 3,
-      shape: FIELD,
-      maxRange: 2
-    },
-    description: 'Summons 3 rocks on unoccupied fields up to 2 fields away from the caster. The rocks block movement and spells that target fields in a line, cone or spread. They are immune to all statuses, extra immunities, fire and frost damage, but are destroyed when they take 1 damage of other type.'
-  },
-  {
-    name: 'Summon four rocks',
-    cost: { rock: 4 },
-    target: {
-      count: 4,
-      shape: FIELD,
-    },
-    description: 'Summons 4 rocks on unoccupied fields anywhere on the battlefield. The rocks block movement and spells that target fields in a line, cone or spread. They are immune to all statuses, extra immunities, fire and frost damage, but are destroyed when they take 1 damage of other type.'
-  },
+  // {
+  //   name: 'Summon a rock',
+  //   cost: { rock: 1 },
+  //   target: {
+  //     shape: FIELD,
+  //     maxRange: 2
+  //   },
+  //   description: 'Summons rocks on unoccupied field up to 2 fields away from the caster. The rock blocks movement and spells that target fields in a line, cone or spread. It is immune to fire and frost damage, but is destroyed when it takes 1 damage.'
+  // },
+  // {
+  //   name: 'Summon two rocks',
+  //   cost: { rock: 2 },
+  //   target: {
+  //     count: 2,
+  //     shape: FIELD,
+  //     maxRange: 2
+  //   },
+  //   description: 'Summons 2 rocks on unoccupied fields up to 2 fields away from the caster. The rocks block movement and spells that target fields in a line, cone or spread. They are immune to all statuses, extra immunities, fire and frost damage, but are destroyed when they take 1 damage of other type.'
+  // },
+  // {
+  //   name: 'Summon three rocks',
+  //   cost: { rock: 3 },
+  //   target: {
+  //     count: 3,
+  //     shape: FIELD,
+  //     maxRange: 2
+  //   },
+  //   description: 'Summons 3 rocks on unoccupied fields up to 2 fields away from the caster. The rocks block movement and spells that target fields in a line, cone or spread. They are immune to all statuses, extra immunities, fire and frost damage, but are destroyed when they take 1 damage of other type.'
+  // },
+  // {
+  //   name: 'Summon four rocks',
+  //   cost: { rock: 4 },
+  //   target: {
+  //     count: 4,
+  //     shape: FIELD,
+  //   },
+  //   description: 'Summons 4 rocks on unoccupied fields anywhere on the battlefield. The rocks block movement and spells that target fields in a line, cone or spread. They are immune to all statuses, extra immunities, fire and frost damage, but are destroyed when they take 1 damage of other type.'
+  // },
   {
     name: 'Rockslide',
     cost: { rock: 5 },
@@ -392,4 +401,74 @@ export const spells = [
     },
     description: 'Moves a target up to two fields away from the caster to an unoccupied field up to 2 fields away from the target.'
   },
+  {
+    name: 'Inversion',
+    cost: { frost: 1, fire: 1 },
+    target: {
+      shape: FIELD,
+      maxRange: 0,
+      spread: 1,
+      excludeCaster: true,
+    },
+    description: 'All [burning] fields turn [frozen] and all [frozen] fields turn [burning] in a circle 2 fields away from the caster.'
+  },
+  {
+    name: 'Burning oil',
+    cost: { frost: 1, fire: 1 },
+    target: {
+      shape: FIELD,
+      maxRange: 0,
+      spread: 1,
+      excludeCaster: true,
+    },
+    description: 'One [wet] field and all it\'s connected [wet] fields anywhere on the battlefield turn [burning].'
+  },
+  {
+    name: 'Refreshments',
+    cost: { life: 1, water: 1 },
+    target: {
+      shape: FIELD,
+      maxRange: 0,
+      spread: 1,
+      excludeCaster: true,
+    },
+    description: 'All targets in a circle 2 fields away from the caster are healed [wound|1].'
+  },
 ];
+
+
+// {
+//   name: 'Thermo\u200Bmeter',
+//   resource: { fire: 1, frost: 1 },
+//   count: 1,
+// },
+// {
+//   name: 'Oil',
+//   resource: { fire: 1, water: 1 },
+//   count: 1,
+// },
+// {
+//   name: 'Coconut',
+//   resource: { life: 1, water: 1 },
+//   count: 1,
+// },
+// {
+//   name: 'Graphite',
+//   resource: { lightning: 1, rock: 1 },
+//   count: 1,
+// },
+// {
+//   name: 'Frozen lightning',
+//   resource: { lightning: 1, frost: 1 },
+//   count: 1,
+// },
+// {
+//   name: 'Mandrake root',
+//   resource: { life: 1, hex: 1 },
+//   count: 1,
+// },
+// {
+//   name: 'Stone rune',
+//   resource: { rock: 1, hex: 1 },
+//   count: 1,
+// },

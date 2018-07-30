@@ -19,6 +19,51 @@ const theme = createMuiTheme({
       main: brown[500],
       dark: brown[700],
     },
+    fire: {
+      light: '#e46646',
+      main: '#c94524',
+      dark: '#9e4832',
+    },
+    lightning: {
+      light: '#e3cd73',
+      main: '#cbaf3f',
+      dark: '#ad9b52',
+    },
+    life: {
+      light: '#9ed24d',
+      main: '#78b717',
+      dark: '#709b2e',
+    },
+    water: {
+      light: '#51c7d8',
+      main: '#24b4c9',
+      dark: '#3c9dab',
+    },
+    frost: {
+      light: '#7985d4',
+      main: '#4a5ac5',
+      dark: '#4e5790',
+    },
+    hex: {
+      light: '#cc72d7',
+      main: '#bd45cb',
+      dark: '#974e9f',
+    },
+    rock: {
+      light: '#a18e7a',
+      main: '#8d7760',
+      dark: '#6c645b',
+    },
+    grass: {
+      light: '#95ba59',
+      main: '#759f33',
+      dark: '#678041',
+    },
+    death: {
+      light: '#5d586b',
+      main: '#48415a',
+      dark: '#332b45',
+    },
   },
   typography: {
     fontSize: 10
