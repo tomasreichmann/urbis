@@ -11,6 +11,13 @@ import { fieldMap } from '../src/model/fields';
 import PrintPage from '../src/components/PrintPage';
 
 import { paperSizes } from '../src/utils/paperSizes';
+import IconHex from '../src/components/icons/IconHex';
+import IconFire from '../src/components/icons/IconFire';
+import IconBurning from '../src/components/icons/IconBurning';
+import IconWet from '../src/components/icons/IconWet';
+import IconFrozen from '../src/components/icons/IconFrozen';
+import IconCursed from '../src/components/icons/IconCursed';
+import IconLightning from '../src/components/icons/IconLightning';
 
 const styles = theme => (console.log('theme', theme), {
   page: {
@@ -96,32 +103,62 @@ class Index extends React.Component {
             <Typography >Assemble field tiles into a board like this.</Typography>
             <Grid hexGrid={board} hexWidth={hexWidth} className={classes.grid}/>
             <Typography >Shuffle element cards and place the deck face down near the board</Typography>
-            <Typography >Pick an avatar for each player and distribute target markers of the same color.</Typography>
-            <Typography >TODO: avatar, target marker graphic</Typography>
-
-            <Typography >Pick a starting player.</Typography>
+            <Typography >Pick an avatar for each player.</Typography>
+            <Typography >Pick a starting player and place a Starting player marker in front of the player.</Typography>
             <Typography >Each player draws a starting hand of 7 element cards.</Typography>
             <Typography >Take turns placing your avatars on any unoccupied grass fields.</Typography>
 
             <Typography variant="headline" className={classes.heading} >
               Turn
             </Typography>
-            <Typography >All players simulanously place face down elements in front of them to cast their spells.</Typography>
-            <Typography >Players can cast up to two spells with up to 5 element cards in total.</Typography>
-            <Typography >First player who is done with spellcasting receives a free element card and starts the hourglass.</Typography>
-            <Typography >When the hourglass is finished, all players must stop changing the cast elements.</Typography>
-            <Typography >Now players can adjust facing of their avatars and place their target markers.</Typography>
-            <Typography >Reveal cast element cards one by one from left to right starting with the starting player until a spell is fully revealed and cast it.</Typography>
-            <Typography >If a player casts his last spell, he can move to a surrounding unoccupied field.</Typography>
-            <Typography >If a player's avatar gains 4 wounds, he is immediately slain and cannot cast any more spells this round.</Typography>
-            <Typography >Continue revealing elements and casting spells untill there are no more left.</Typography>
-            <Typography >Move the first player marker to the person who cast the last spell.</Typography>
-            <Typography >Players with slain avatars discard all their element cards and wound markers, draw a new hand of 7 cards and respawn their avatar on any unoccupied grass field.</Typography>
+            <Typography gutterBottom >All players simulanously place face down elements in front of them to cast their spells.</Typography>
+            <Typography gutterBottom >Players can cast up to two spells with up to 5 element cards in total.</Typography>
+            <Typography gutterBottom >First player who is done with spellcasting receives a free element card and starts the hourglass.</Typography>
+            <Typography gutterBottom >When the hourglass is finished, all players must stop changing the cast elements.</Typography>
+            <Typography gutterBottom >Reveal cast element cards one by one from left to right starting with the starting player until a spell is fully revealed and cast it.</Typography>
+            <Typography gutterBottom >If a player casts his last spell, he can move to a surrounding unoccupied field.</Typography>
+            <Typography gutterBottom >If a player's avatar gains <IconWound label={4}/>, he is immediately slain and cannot cast any more spells this round.</Typography>
+            <Typography gutterBottom >Continue revealing elements and casting spells untill there are no more left.</Typography>
+            <Typography gutterBottom >Move the first player marker to the person who cast the last spell.</Typography>
+            <Typography gutterBottom >Players with slain avatars discard all their element cards and wound markers, draw a new hand of 7 cards and respawn their avatar on any unoccupied grass field.</Typography>
 
             <Typography variant="headline" className={classes.heading} >
               Spellcasting
             </Typography>
             <Typography >Combination of elements that does not exatly match any spells have no effect.</Typography>
+          </PrintPage>
+
+          <PrintPage page={paperSizes.portrait.A4} >
+            <Typography gutterBottom variant="headline" component="h1">
+              Statuses
+            </Typography>
+
+            <Typography gutterBottom variant="title" component="h2" className={classes.heading} >
+              <IconBurning label="Burning" iconSize={3} />
+            </Typography>
+            <Typography gutterBottom >Any targets that are in a <IconBurning /> zone at the end of the round receive <IconFire label="1" /> damage.</Typography>
+            <Typography gutterBottom >If the zone has <IconWet /> status and is about to get a <IconBurning /> status, it instead looses this status and does not get any new ones.</Typography>
+
+            <Typography gutterBottom variant="title" component="h2" className={classes.heading} >
+              <IconWet label="Wet" iconSize={3} />
+            </Typography>
+            <Typography gutterBottom >Any targets in the <IconWet /> zone that are are about to receive <IconLightning /> damage receive 1 extra <IconLightning /> damage.</Typography>
+            <Typography gutterBottom >If the zone has a <IconBurning /> status and is about to receive a <IconWet /> status, it instead looses this status and does not get any new ones.</Typography>
+
+            <Typography gutterBottom variant="title" component="h2" className={classes.heading} >
+              <IconFrozen label="Frozen" iconSize={3} />
+            </Typography>
+            <Typography gutterBottom >A <IconWet /> zone that is a target of a freezing spell looses the <IconWet /> status and gains a <IconFrozen /> status instead.</Typography>
+            <Typography gutterBottom >A target cannot move while the zone is <IconFrozen />.</Typography>
+            <Typography gutterBottom >A <IconFrozen /> zone that is a target of a <IconFire /> spell looses the <IconFrozen /> status and gains a <IconWet /> status instead.</Typography>
+
+            <Typography gutterBottom variant="title" component="h2" className={classes.heading} >
+              <IconCursed label="Cursed" iconSize={3} />
+            </Typography>
+            <Typography gutterBottom >A zone can not become cursed.</Typography>
+            <Typography gutterBottom >A target that is cursed can only make spells with the total of 4 elements per round.</Typography>
+            <Typography gutterBottom >The <IconCursed /> status is replaced by any other <IconHex /> statuses, like Fire Immunity.</Typography>
+
           </PrintPage>
         </div>
       </div>

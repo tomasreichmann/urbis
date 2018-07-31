@@ -313,44 +313,17 @@ export const spells = [
     description: 'A target up to 2 fields away from the caster becomes immune to all spells that contain the [life] element. This also removes any currently active [cursed] statuses and any other immunities from the target. The target can use 1 extra [life] element once per turn.'
   },
   {
-    name: 'Papercut healing',
-    cost: { life: 1 },
+    name: 'Healing',
+    cost: { life: [1, 3] },
     target: {
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster heals 1 damage.'
-  },
-  {
-    name: 'Band aid healing',
-    cost: { life: 2 },
-    target: {
-      shape: FIELD,
-      maxRange: 2
-    },
-    description: 'A target up to 2 fields away from the caster heals 2 damage.'
-  },
-  {
-    name: 'Bumps and bruises healing',
-    cost: { life: 3 },
-    target: {
-      shape: FIELD,
-      maxRange: 2
-    },
-    description: 'A target up to 2 fields away from the caster heals 3 damage.'
-  },
-  {
-    name: 'Broken bones healing',
-    cost: { life: 4 },
-    target: {
-      shape: FIELD,
-      maxRange: 2
-    },
-    description: 'A target anywhere on the battlefield heals 4 damage.'
+    description: 'A target up to 2 fields away from the caster heals [wound|1 - 3].'
   },
   {
     name: 'Resurrection',
-    cost: { life: 5 },
+    cost: { life: 4 },
     target: {
       shape: FIELD,
       maxRange: 2
@@ -377,7 +350,7 @@ export const spells = [
   },
   {
     name: 'Dispel all',
-    cost: { hex: 5 },
+    cost: { hex: 4 },
     target: {
       shape: FIELD,
       maxRange: 2
@@ -414,7 +387,7 @@ export const spells = [
   },
   {
     name: 'Burning oil',
-    cost: { frost: 1, fire: 1 },
+    cost: { water: 1, fire: 1 },
     target: {
       shape: FIELD,
       maxRange: 0,

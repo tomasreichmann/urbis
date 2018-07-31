@@ -77,17 +77,17 @@ export const resources = [
   {
     name: 'Dreamcatcher',
     resource: { hex: 1 },
-    count: 3,
+    count: 2,
   },
   {
     name: 'Woodoo doll',
     resource: { hex: 2 },
-    count: 3,
+    count: 2,
   },
   {
     name: 'Human heart',
     resource: { hex: 3 },
-    count: 3,
+    count: 2,
   },
   {
     name: 'Tree Sprout',

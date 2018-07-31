@@ -10,6 +10,7 @@ import IconBurning from '../components/icons/IconBurning';
 import IconFrozen from '../components/icons/IconFrozen';
 import IconCursed from '../components/icons/IconCursed';
 import IconLife from '../components/icons/IconLife';
+import IconWound from '../components/icons/IconWound';
 
 export const getIconProps = ([match, label]) => (label ? {label} : {});
 
@@ -72,6 +73,11 @@ export const ruleList = [
   {
     match: /life[|]?(.*)?/,
     component: IconLife,
+    getProps: getIconProps
+  },
+  {
+    match: /wound[|]?(.*)?/,
+    component: IconWound,
     getProps: getIconProps
   },
 ]
