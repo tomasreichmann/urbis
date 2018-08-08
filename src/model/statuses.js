@@ -4,6 +4,7 @@ export const statuses = [
     effects: [
       'Any targets that are in a [burning] field at the end of the round receive [fire|1] damage.',
       'Targets with a [wet] status standing in a [burning] field at the end of the round loose the [wet] status and do not receive the [fire] damage.',
+      'A [burning] field hit by a [water] spell looses the [burning] status. Targets on this field do not get the [wet] status.',
     ],
     shortEffects: [
       '[burning] + [water] => remove [burning]',
