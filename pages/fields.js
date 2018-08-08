@@ -9,7 +9,6 @@ import withRoot from '../src/withRoot';
 
 import Navigation from '../src/components/Navigation';
 import FieldHex from '../src/components/FieldHex';
-import Icon from '../src/components/icons/Icon';
 import PrintPage from '../src/components/PrintPage';
 
 import { fields } from '../src/model/fields';

@@ -30,6 +30,7 @@ function Navigation(props) {
           <Link href="/spells" ><Button component="a" className={classes.button}>Spells</Button></Link>
           <Link href="/fields" ><Button component="a" className={classes.button}>Fields</Button></Link>
           <Link href="/paper-minis" ><Button component="a" className={classes.button}>Paper Minis</Button></Link>
+          <Link href="/helpers" ><Button component="a" className={classes.button}>Helpers</Button></Link>
         </Toolbar>
       </AppBar>
     </div>

@@ -14,7 +14,7 @@ export const spells = [
       shape: FIELD,
       range: 2
     },
-    description: 'Casts a flare that sets the [burning] status on a field and it\'s target up to 2 fields away from the caster.'
+    description: 'Casts a flare that sets the [burning] status on a field on caster\'s field or up to 2 fields away from the caster.'
   },
   {
     name: 'Grilling hands',
@@ -24,7 +24,7 @@ export const spells = [
       size: 2,
       range: 1
     },
-    description: 'Casts a burst of fire that sets the [burning] status on all the fields and their targets in an a small arc 2 fields away from the caster.'
+    description: 'Casts a burst of fire that sets the [burning] status on all the fields in an a small arc 2 fields away from the caster.'
   },
   {
     name: 'Fireball',
@@ -34,7 +34,7 @@ export const spells = [
       spread: 1,
       maxRange: 2
     },
-    description: 'Casts an explosion of fire that sets the [burning] status on all the fields and their targets with the center up to 2 fields away from the caster spreading 1 field away from it\'s center.'
+    description: 'Casts an explosion of fire that sets the [burning] status on all the fields with the center on the caster or up to 2 fields away from the caster spreading 1 field away from the center.'
   },
   {
     name: 'Meteor',
@@ -43,7 +43,7 @@ export const spells = [
       shape: FIELD,
       spread: 2
     },
-    description: 'Casts an explosion of fire that sets the [burning] status on all the fields and their targets spreading 2 fields away from it\'s center anywhere on the battlefield.'
+    description: 'Casts an explosion of fire that sets the [burning] status on all the fields spreading 2 fields away from it\'s center anywhere on the battlefield.'
   },
   {
     name: 'Floor is lava',
@@ -51,7 +51,7 @@ export const spells = [
     target: {
       shape: ALL_FIELDS
     },
-    description: 'Casts a rain of burning magma that sets the [burning] status on all the fields and their targets on the entire battlefield.'
+    description: 'Casts a rain of burning magma that sets the [burning] status on all the fields on the entire battlefield.'
   },
   {
     name: 'Splash',
@@ -60,7 +60,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'Casts a splash of water that sets the [wet] status on a fields and it\' target up to 2 fields away from the caster and moves target 1 field in any direction.'
+    description: 'Casts a splash of water that sets the [wet] status on the caster or a target up to 2 fields away from the caster and moves target 1 field in any direction.'
   },
   {
     name: 'Tidal wave',
@@ -70,7 +70,7 @@ export const spells = [
       size: 2,
       range: 0
     },
-    description: 'Casts a stream of water that sets the [wet] status on all the fields and their targets in an a small arc 2 fields away from the caster and moves tarets 1 field away from the caster. If it\s not clear where to move, the caster decides which field to move to.'
+    description: 'Casts a stream of water that sets the [wet] status on all the targets in an a small arc 2 fields away from the caster and moves tarets 1 field away from the caster. If it\s not clear where to move, the caster decides which field to move to.'
   },
   {
     name: 'Water bomb',
@@ -80,7 +80,7 @@ export const spells = [
       spread: 1,
       maxRange: 2
     },
-    description: 'Casts an explosion of water that sets the [wet] status on all the fields and their targets with the center up to 2 fields away from the caster spreading 1 field away from it\'s center and moves targets 1 field away from the center.'
+    description: 'Casts an explosion of water that sets the [wet] status on all the targets with the center up to 2 fields away from the caster spreading 1 field away from it\'s center and moves targets 1 field away from the center.'
   },
   {
     name: 'Geysir',
@@ -89,7 +89,7 @@ export const spells = [
       shape: FIELD,
       spread: 2
     },
-    description: 'Casts an explosion of water that sets the [wet] status on all the fields and their targets spreading 2 fields away from it\`s center anywhere on the battlefield and moves targets 1 field away from the center.'
+    description: 'Casts an explosion of water that sets the [wet] status on all the targets spreading 2 fields away from it\`s center anywhere on the battlefield and moves targets 1 field away from the center. If it\s not clear where to move, the caster decides which field to move to.'
   },
   {
     name: 'Tsunami',
@@ -97,7 +97,7 @@ export const spells = [
     target: {
       shape: ALL_FIELDS
     },
-    description: 'Casts a wall of water quickly moving across battlefield that sets the [wet] status on all the fields and their targets on the entire battlefield and move them on field in a single direction of casters choice.'
+    description: 'Casts a wall of water quickly moving across battlefield that sets the [wet] status on all the targets on the entire battlefield and move them 1 field in a single direction of casters choice.'
   },
   {
     name: 'Electric jolt',
@@ -160,7 +160,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'Casts a freezing gaze that does [frost|1] damage to the target on a field up to 2 fields away from the caster. If the field or target are [wet] it replaces their [wet] status with the [frost] status.'
+    description: 'Casts a freezing gaze that does [frost|1] damage to the target on a field up to 2 fields away from the caster. If the target is [wet] it replaces the [wet] status with the [frost] status.'
   },
   {
     name: 'Cone of cold',
@@ -171,7 +171,7 @@ export const spells = [
       size: 2,
       range: 0
     },
-    description: 'Casts a wave of ice that does [frost|1] damage to all the fields and their targets in an a small arc 2 fields away from the caster. If any affected fields or targets are [wet] it replaces their [wet] status with the [frost] status.'
+    description: 'Casts a wave of ice that does [frost|1] damage to all the targets in an a small arc 2 fields away from the caster. If any affected targets are [wet] it replaces the [wet] status with the [frost] status.'
   },
   {
     name: 'Snow ball',
@@ -182,7 +182,7 @@ export const spells = [
       spread: 1,
       maxRange: 2
     },
-    description: 'Casts an explosion of ice that does [frost|1] damage to all the fields and their targets with the center up to 2 fields away from the caster spreading 1 field away from it\'s center. If any affected fields or targets are [wet] it replaces their [wet] status with the [frost] status.'
+    description: 'Casts an explosion of ice that does [frost|1] damage to all the targets with the center up to 2 fields away from the caster spreading 1 field away from it\'s center. If any affected targets are [wet] it replaces the [wet] status with the [frost] status.'
   },
   {
     name: 'Arctic blast',
@@ -192,7 +192,7 @@ export const spells = [
       shape: FIELD,
       spread: 2
     },
-    description: 'Casts an explosion of ice that does [frost|1] damage to all the fields and their targets spreading 2 fields away from it\`s center anywhere on the battlefield. If any affected fields or targets are [wet] it replaces their [wet] status with the [frost] status.'
+    description: 'Casts an explosion of ice that does [frost|1] damage to all the targets spreading 2 fields away from it\`s center anywhere on the battlefield. If any affected targets are [wet] it replaces the [wet] status with the [frost] status.'
   },
   {
     name: 'Blizzard',
@@ -201,7 +201,7 @@ export const spells = [
     target: {
       shape: ALL_FIELDS
     },
-    description: 'Casts a blizzard that does [frost|1] damage to all the fields and their targets on the entire battlefield. If any affected fields or targets are [wet] it replaces their [wet] status with the [frost] status.'
+    description: 'Casts a blizzard that does [frost|1] damage to all the targets on the entire battlefield. If any affected targets are [wet] it replaces the [wet] status with the [frost] status.'
   },
   {
     name: 'Summon rocks',
@@ -210,7 +210,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'Summons rocks on unoccupied fields up to 2 fields away from the caster equal to the number of rock elements used. The rocks block movement. They are immune to all statuses, extra immunities. Rocks can only be destroyed by [lightning|1] damage, dispel or spells that explicitly target rocks.'
+    description: 'Summons rocks on unoccupied fields up to 2 fields away from the caster equal to the number of rock elements used. The rocks block movement. They are immune to all statuses, extra immunities. Rocks can only be destroyed by [lightning] damage, dispel or spells that explicitly target rocks.'
   },
   // {
   //   name: 'Summon a rock',
@@ -256,7 +256,7 @@ export const spells = [
     target: {
       shape: ALL_FIELDS,
     },
-    description: 'Summons rocks on all unoccupied fields anywhere on the battlefield. The rocks block movement and spells that target fields in a line, cone or spread. They are immune to all statuses, extra immunities, fire and frost damage, but are destroyed when they take 1 damage of other type.'
+    description: 'Summons rocks on all unoccupied grass fields anywhere on the battlefield. The rocks block movement. They are immune to all statuses, extra immunities. Rocks can only be destroyed by [lightning] damage, dispel or spells that explicitly target rocks.'
   },
   {
     name: 'Fire immunity',
@@ -265,7 +265,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster becomes immune to all spells that contain the [fire] element as well as the [burning] status. This also removes any currently active [burning] and [cursed] statuses and any other immunities from the target. The target can use 1 extra [fire] element once per turn.'
+    description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that contain the [fire] element as well as the [burning] status. This also removes any currently active [burning] and [cursed] statuses and any other immunities from the target.'
   },
   {
     name: 'Water immunity',
@@ -274,7 +274,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster becomes immune to all spells that contain the [water] element as well as the [wet] status. This also removes any currently active [wet] and [cursed] statuses and any other immunities from the target. The target can use 1 extra [water] element once per turn.'
+    description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that contain the [water] element as well as the [wet] status. This also removes any currently active [wet] and [cursed] statuses and any other immunities from the target.'
   },
   {
     name: 'Lightning immunity',
@@ -283,7 +283,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster becomes immune to all spells that contain the [lightning] element. This also removes a [cursed] status and any other immunities from the target. The target can use 1 extra [lightning] element once per turn.'
+    description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that contain the [lightning] element. This also removes a [cursed] status and any other immunities from the target.'
   },
   {
     name: 'Physical immunity',
@@ -292,7 +292,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster becomes immune to all spells that move him or result in dealing him physical damage. This also removes any other immunities from the target. The target can use 1 extra [rock] element once per turn.'
+    description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that move him or result in dealing him physical damage. This also removes any other immunities from the target.'
   },
   {
     name: 'Frost immunity',
@@ -301,7 +301,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster becomes immune to all spells that contain the [frost] element as well as the [frozen] status. This also removes any currently active [frozen] and [cursed] statuses and any other immunities from the target. The target can use 1 extra [frost] element once per turn.'
+    description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that contain the [frost] element as well as the [frozen] status. This also removes any currently active [frozen] and [cursed] statuses and any other immunities from the target.'
   },
   {
     name: 'Life immunity',
@@ -310,7 +310,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster becomes immune to all spells that contain the [life] element. This also removes any currently active [cursed] statuses and any other immunities from the target. The target can use 1 extra [life] element once per turn.'
+    description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that contain the [life] element. This also removes any currently active [cursed] statuses and any other immunities from the target.'
   },
   {
     name: 'Healing',
@@ -328,7 +328,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target anywhere on the battlefield is brought back to life on the same field it died and has damage immunity untill its turn. If cast on self, it will fully heal you if you drop below 0 health thus preventing.'
+    description: 'A target anywhere on the battlefield is brought back to life on the same field it died and has damage immunity untill its turn. If cast on the caster, it will fully heal the caster when he is about to die thus preventing death.'
   },
   {
     name: 'Curse',
@@ -337,7 +337,7 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster gains the [cursed] status and looses any immunities. The target can use 1 extra [hex] element once per turn. If the target has any spare elements, the caster also steals one of the target\'s elements at random.'
+    description: 'The caster or a target up to 2 fields away from the caster gains the [cursed] status and looses any immunities. If the target has any spare elements, the caster also steals one of the target\'s elements at random.'
   },
   {
     name: 'Dispel',
@@ -346,11 +346,11 @@ export const spells = [
       shape: FIELD,
       maxRange: 2
     },
-    description: 'A target up to 2 fields away from the caster looses all statuses and immunities.'
+    description: 'The caster or a target up to 2 fields away from the caster looses all statuses and immunities.'
   },
   {
     name: 'Dispel all',
-    cost: { hex: 4 },
+    cost: { hex: 3 },
     target: {
       shape: FIELD,
       maxRange: 2

@@ -17,9 +17,6 @@ const styles = ({ iconSize = 2 }) => theme => ({
   iconFirst: {
     marginLeft: 0
   },
-  withLabel: {
-    marginRight: theme.spacing.unit / 2
-  },
   circle: {
     display: 'inline-flex',
     verticalAlign: 'middle',
@@ -35,15 +32,14 @@ const styles = ({ iconSize = 2 }) => theme => ({
 });
 
 const Icon = (props) => {
-  const { classes, variant, label, iconSize, hasCircle, iconUri, component, className, count } = props;
+  const { classes, label, hasCircle, iconUri, className, count } = props;
   const iconImage = (index) => {
     const isFirst = index === 0;
     return (<img key={index} src={iconUri} className={cls(
       classes.icon,
-      isFirst ? classes.iconFirst : undefined,
-      (label && !hasCircle) ? classes.withLabel : undefined
+      isFirst ? classes.iconFirst : undefined
     )} />);
-  }
+  };
   const iconImages = new Array(count).fill(null).map( (_, index) => iconImage(index) );
   const icon = hasCircle
     ? <span className={cls(classes.circle, label
@@ -52,7 +48,7 @@ const Icon = (props) => {
     : iconImages;
 
   return (
-    <span className={cls(classes.wrapper, className)}>{icon}{label}</span>
+    <span className={cls(classes.wrapper, className)}>{icon}{label ? '\u00A0' : ''}{label}</span>
   );
 }
 

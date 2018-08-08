@@ -77,28 +77,28 @@ export const resources = [
   {
     name: 'Dreamcatcher',
     resource: { hex: 1 },
-    count: 2,
+    count: 6,
   },
+  // {
+  //   name: 'Woodoo doll',
+  //   resource: { hex: 2 },
+  //   count: 2,
+  // },
+  // {
+  //   name: 'Human heart',
+  //   resource: { hex: 3 },
+  //   count: 2,
+  // },
   {
-    name: 'Woodoo doll',
-    resource: { hex: 2 },
-    count: 2,
-  },
-  {
-    name: 'Human heart',
-    resource: { hex: 3 },
-    count: 2,
-  },
-  {
-    name: 'Tree Sprout',
+    name: 'Tree Sap',
     resource: { life: 1 },
-    count: 2,
+    count: 4,
   },
-  {
-    name: 'Puppy',
-    resource: { life: 2 },
-    count: 2,
-  },
+  // {
+  //   name: 'Puppy',
+  //   resource: { life: 2 },
+  //   count: 2,
+  // },
   // {
   //   name: 'Thermo\u200Bmeter',
   //   resource: { fire: 1, frost: 1 },

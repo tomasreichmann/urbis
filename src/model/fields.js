@@ -13,7 +13,11 @@ export const fields = [
     count: 1,
     color: 'fire',
     icon: 'fire',
-    description: 'Magical burning brazier. It has permanent [burning] status that cannot be removed by any means. The caster on this field can use an extra [fire|2] element card once per round.'
+    description: 'Magical burning brazier. It has permanent [burning] status that cannot be removed by any means. The caster on this field can use an extra [fire||2] element card once per round.',
+    features: [
+      'Permanent [burning]',
+      'Extra [fire||2] element card once per round',
+    ],
   },
   {
     key: 'pond',
@@ -21,7 +25,11 @@ export const fields = [
     count: 1,
     color: 'water',
     icon: 'water',
-    description: 'A calm pond with crystal clear water and tiny fish. It has permanent [wet] status that cannot be removed by any means. The caster on this field can an extra [water|2] element card once per round.'
+    description: 'A calm pond with crystal clear water and tiny fish. It has permanent [wet] status that cannot be removed by any means. The caster on this field can an extra [water||2] element card once per round.',
+    features: [
+      'Permanent [wet]',
+      'Extra [water||2] element card once per round',
+    ],
   },
   {
     key: 'lightningRod',
@@ -29,7 +37,11 @@ export const fields = [
     count: 1,
     color: 'lightning',
     icon: 'lightning',
-    description: 'Someone placed a lightning rod here for some reason. The target on this field is immune to [lightning] damage. The caster on this field can use an extra [lightning|2] element card once per round.'
+    description: 'Someone placed a lightning rod here for some reason. The target on this field is immune to [lightning] damage. The caster on this field can use an extra [lightning||2] element card once per round.',
+    features: [
+      'Immune to [lightning]',
+      'Extra [lightning||2] element card once per round',
+    ],
   },
   {
     key: 'glacier',
@@ -37,7 +49,11 @@ export const fields = [
     count: 1,
     color: 'frost',
     icon: 'frost',
-    description: 'Why doesn\'t this melt? Good place to store beer, but very slippery. It has permanent [frost] status that cannot be removed by any means. The caster on this field can use an extra [frost|2] element card once per round.'
+    description: 'Why doesn\'t this melt? Good place to store beer, but very slippery. It has permanent [frost] status that cannot be removed by any means. The caster on this field can use an extra [frost||2] element card once per round.',
+    features: [
+      'Permanent [frozen]',
+      'Extra [frost||2] element card once per round',
+    ],
   },
   {
     key: 'pentagram',
@@ -45,7 +61,11 @@ export const fields = [
     count: 1,
     color: 'hex',
     icon: 'hex',
-    description: 'The blasphemous symbol hums ominously. Emos hangout around here a lot. The target that enters this field is cursed. The curse cannot be removed until the target leaves this field. The caster on this field can use an extra [hex|2] element card once per round.'
+    description: 'The blasphemous symbol hums ominously. Emos hangout around here a lot. The target that enters this field is cursed. The curse cannot be removed until the target leaves this field. The caster on this field can use an extra [hex||2] element card once per round.',
+    features: [
+      'Permanent [cursed]',
+      'Extra [hex||2] element card once per round',
+    ],
   },
   {
     key: 'divineChapel',
@@ -53,7 +73,11 @@ export const fields = [
     count: 1,
     color: 'life',
     icon: 'life',
-    description: 'This sacred ground radiates with healing energy and sexual frustration. The target on this field is healed 1 hitpoint at the end of the turn. Caster\s life spells heal one more wound.'
+    description: 'This sacred ground radiates with healing energy and sexual frustration. The caster on this field can use an extra [life||1] element card once per round',
+    features: [
+      'Immune to [cursed]',
+      'Extra [life||1] element card once per round',
+    ],
   },
   {
     key: 'quarry',
@@ -61,7 +85,10 @@ export const fields = [
     count: 1,
     color: 'rock',
     icon: 'rock',
-    description: 'Rocks. Rocks everywhere!. The caster on this field can place a free rock at the end of the round.'
+    description: 'Rocks. Rocks everywhere!. The caster on this field can place a free rock at the end of the round.',
+    features: [
+      'Place a free rock at the end of the round'
+    ],
   },
   {
     key: 'bottomlessAbyss',
@@ -69,7 +96,11 @@ export const fields = [
     count: 1,
     color: 'death',
     icon: 'death',
-    description: 'The sound of a cracked skull echos from the abyss. The target that moves into this field is killed instantly.'
+    description: 'The sound of a cracked skull echos from the abyss. The target that moves into this field is killed instantly.',
+    features: [
+      'Immune to [lightning]',
+      'Extra [lightning||2] element card once per round',
+    ],
   },
   {
     key: 'wizardTower',
@@ -77,7 +108,11 @@ export const fields = [
     count: 1,
     color: 'hex',
     icon: 'hex',
-    description: 'This tall spire denies both laws of physics and good taste. The caster on this field draws an extra element once per turn, all caster\'s spells deal 1 extra damage of the same type. Spell\'s maximum range doesn\'t apply against the target.'
+    description: 'This tall spire denies both laws of physics and good taste. The caster on this field draws an extra element once per turn, all caster\'s spells deal 1 extra damage of the same type. Spell\'s maximum range doesn\'t apply against the target.',
+    features: [
+      'Caster\'s spells deal 1 extra damage of the same type',
+      'Range doesn\'t apply against a target on this field',
+    ],
   },
 ];
 

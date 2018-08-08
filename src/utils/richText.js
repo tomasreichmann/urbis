@@ -12,71 +12,77 @@ import IconCursed from '../components/icons/IconCursed';
 import IconLife from '../components/icons/IconLife';
 import IconWound from '../components/icons/IconWound';
 
-export const getIconProps = ([match, label]) => (label ? {label} : {});
+
+export const normalizeNumber = (nr) => {
+  const int = parseInt(nr);
+  return isNaN(int) ? undefined : int;
+};
+
+export const getIconProps = ([match, label, count]) => ({...(label ? {label} : {}), count: normalizeNumber(count)});
 
 export const ruleList = [
   {
-    match: /burning[|]?(.*)?/,
+    match: /burning[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconBurning,
     getProps: getIconProps
   },
   {
-    match: /fire[|]?(.*)?/,
+    match: /fire[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconFire,
     getProps: getIconProps
   },
   {
-    match: /water[|]?(.*)?/,
+    match: /water[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconWater,
     getProps: getIconProps
   },
   {
-    match: /lightning[|]?(.*)?/,
+    match: /lightning[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconLightning,
     getProps: getIconProps
   },
   {
-    match: /frost[|]?(.*)?/,
+    match: /frost[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconFrost,
     getProps: getIconProps
   },
   {
-    match: /rock[|]?(.*)?/,
+    match: /rock[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconRock,
     getProps: getIconProps
   },
   {
-    match: /hex[|]?(.*)?/,
+    match: /hex[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconHex,
     getProps: getIconProps
   },
   {
-    match: /wet[|]?(.*)?/,
+    match: /wet[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconWet,
     getProps: getIconProps
   },
   {
-    match: /burning[|]?(.*)?/,
+    match: /burning[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconBurning,
     getProps: getIconProps
   },
   {
-    match: /frozen[|]?(.*)?/,
+    match: /frozen[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconFrozen,
     getProps: getIconProps
   },
   {
-    match: /cursed[|]?(.*)?/,
+    match: /cursed[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconCursed,
     getProps: getIconProps
   },
   {
-    match: /life[|]?(.*)?/,
+    match: /life[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconLife,
     getProps: getIconProps
   },
   {
-    match: /wound[|]?(.*)?/,
+    match: /wound[|]?([^\|]*)?[|]?([^\|]*)?/,
     component: IconWound,
     getProps: getIconProps
   },

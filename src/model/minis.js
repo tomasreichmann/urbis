@@ -59,6 +59,13 @@ export const startingPlayer = {
   height: '1in',
 };
 
+export const killToken = {
+  imageUri: 'https://i.imgur.com/eMNBbz3.jpg',
+  width: '1in',
+  height: '1in',
+  count: 17,
+};
+
 export const rock = {
   imageUri: 'https://i.imgur.com/b7DnzXx.png',
   color: 'rock',
@@ -97,5 +104,6 @@ export const minis = [
   rock,
   burning,
   wet,
-  frozen
+  frozen,
+  killToken
 ]

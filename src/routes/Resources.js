@@ -22,7 +22,8 @@ function Resources(props) {
     <PrintSheet
       page={paperSizes.portrait.A4}
       item={paperSizes.portrait.smallCard}
-      itemMargin="1mm"
+      pageMargin="8mm"
+      itemMargin="0"
       items={resourceElements}
     />
   );

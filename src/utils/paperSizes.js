@@ -44,6 +44,10 @@ export const paperSizes = {
       height: '26mm',
       width: '37mm'
     },
+    card: {
+      height: '40mm',
+      width: '55mm',
+    },
     smallCard: {
       height: '30mm',
       width: '40mm',

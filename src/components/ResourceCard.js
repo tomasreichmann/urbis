@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Cost from './Cost';
@@ -24,6 +23,9 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     padding: theme.spacing.unit,
+    '&:last-child': {
+      paddingBottom: theme.spacing.unit,
+    },
   }
 });
 
@@ -31,7 +33,7 @@ function ResourceCard(props) {
   const { classes, name, resource, className } = props;
 
   return (
-    <CardContent className={classes.cardContent}>
+    <CardContent className={classnames(classes.cardContent, className)}>
       <div className={classes.cost}>
         <Cost cost={resource} iconSize={5}/>
       </div>

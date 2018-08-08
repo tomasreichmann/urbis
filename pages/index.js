@@ -18,6 +18,8 @@ import IconWet from '../src/components/icons/IconWet';
 import IconFrozen from '../src/components/icons/IconFrozen';
 import IconCursed from '../src/components/icons/IconCursed';
 import IconLightning from '../src/components/icons/IconLightning';
+import IconWound from '../src/components/icons/IconWound';
+import { richText } from '../src/utils/richText';
 
 const styles = theme => (console.log('theme', theme), {
   page: {
@@ -125,7 +127,7 @@ class Index extends React.Component {
             <Typography variant="headline" className={classes.heading} >
               Spellcasting
             </Typography>
-            <Typography >Combination of elements that does not exatly match any spells have no effect.</Typography>
+            <Typography >You overpay with elements for a spell. Eg. Cast a <IconFire label="Roman candle" /> with a <IconFire label="" count={2} /> element card.</Typography>
           </PrintPage>
 
           <PrintPage page={paperSizes.portrait.A4} >
