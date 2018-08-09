@@ -56,7 +56,7 @@ export const resources = [
   },
   {
     name: 'Plasma ball',
-    resource: { lightning: 2 },
+    resource: { lightning: 3 },
     count: 3,
   },
   {
@@ -129,39 +129,39 @@ export const resources = [
   //   resource: { life: 1, hex: 1 },
   //   count: 1,
   // },
-  {
-    name: 'Stone rune',
-    resource: { rock: 1, hex: 1 },
-    count: 1,
-  },
-  {
-    name: 'Life immunity',
-    resource: { life: 1, hex: 1 },
-    count: 4,
-  },
-  {
-    name: 'Fire immunity',
-    resource: { fire: 1, hex: 1 },
-    count: 4,
-  },
-  {
-    name: 'Water immunity',
-    resource: { water: 1, hex: 1 },
-    count: 4,
-  },
-  {
-    name: 'Frost immunity',
-    resource: { frost: 1, hex: 1 },
-    count: 4,
-  },
-  {
-    name: 'Lightning immunity',
-    resource: { lightning: 1, hex: 1 },
-    count: 4,
-  },
-  {
-    name: 'Physical immunity',
-    resource: { rock: 1, hex: 1 },
-    count: 4,
-  },
+  // {
+  //   name: 'Stone rune',
+  //   resource: { rock: 1, hex: 1 },
+  //   count: 1,
+  // },
+  // {
+  //   name: 'Life immunity',
+  //   resource: { life: 1, hex: 1 },
+  //   count: 4,
+  // },
+  // {
+  //   name: 'Fire immunity',
+  //   resource: { fire: 1, hex: 1 },
+  //   count: 4,
+  // },
+  // {
+  //   name: 'Water immunity',
+  //   resource: { water: 1, hex: 1 },
+  //   count: 4,
+  // },
+  // {
+  //   name: 'Frost immunity',
+  //   resource: { frost: 1, hex: 1 },
+  //   count: 4,
+  // },
+  // {
+  //   name: 'Lightning immunity',
+  //   resource: { lightning: 1, hex: 1 },
+  //   count: 4,
+  // },
+  // {
+  //   name: 'Physical immunity',
+  //   resource: { rock: 1, hex: 1 },
+  //   count: 4,
+  // },
 ];

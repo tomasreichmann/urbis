@@ -45,7 +45,73 @@ export const statuses = [
     shortEffects: [
       'Caster steals one card from your hand or discard one of your choice',
       'You can cast maximum of 4 element cards',
+      'Removes immunities',
       'Replaced by any [hex] status',
+    ]
+  },
+  {
+    name: '[life|Life immunity]',
+    effects: [
+      'You are immune to all spells that contain the [life] element.',
+      'This status replaces the [cursed] status or any immunity',
+      'This status is replaced by the [cursed] status or any immunity',
+    ],
+    shortEffects: [
+      'Immunity to [life] spells',
+      'Replaces [cursed] or any immunity',
+      'Replaced by [curse] or any immunity',
+    ]
+  },
+  {
+    name: '[fire|Fire immunity]',
+    effects: [
+      'You are immune to the [burning] status and to all spells that contain the [fire] element.',
+      'This status replaces the [cursed] status or any immunity',
+      'This status is replaced by the [cursed] status or any immunity',
+    ],
+    shortEffects: [
+      'Immunity to [fire] spells and [burning]',
+      'Replaces [cursed] or any immunity',
+      'Replaced by [curse] or any immunity',
+    ]
+  },
+  {
+    name: '[water|Water immunity]',
+    effects: [
+      'You are immune to the [wet] status and to all spells that contain the [water] element.',
+      'This status replaces the [cursed] status or any immunity',
+      'This status is replaced by the [cursed] status or any immunity',
+    ],
+    shortEffects: [
+      'Immunity to [water] spells and [wet]',
+      'Replaces [cursed] or any immunity',
+      'Replaced by [curse] or any immunity',
+    ]
+  },
+  {
+    name: '[lightning|Lightning immunity]',
+    effects: [
+      'You are immune to all spells that contain the [lightning] element.',
+      'This status replaces the [cursed] status or any immunity',
+      'This status is replaced by the [cursed] status or any immunity',
+    ],
+    shortEffects: [
+      'Immunity to [lightning] spells',
+      'Replaces [cursed] or any immunity',
+      'Replaced by [curse] or any immunity',
+    ]
+  },
+  {
+    name: '[frost|Frost immunity]',
+    effects: [
+      'You are immune to the [frozen] status and to all spells that contain the [frost] element.',
+      'This status replaces the [cursed] status or any immunity',
+      'This status is replaced by the [cursed] status or any immunity',
+    ],
+    shortEffects: [
+      'Immunity to [frost] spells and [frozen]',
+      'Replaces [cursed] or any immunity',
+      'Replaced by [curse] or any immunity',
     ]
   },
 ];

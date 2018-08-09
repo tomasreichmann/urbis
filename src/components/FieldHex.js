@@ -16,7 +16,6 @@ function FieldHex(props) {
 } = props;
   const labelElement = <Typography variant={labelVariant} style={{ color: 'white', marginTop: '1mm' }} >{name}</Typography>;
   const iconElement = icon ? <Icon label={labelElement} iconSize={iconSize} hasCircle iconUri={`/static/${icon}.png`} /> : labelElement;
-  console.log('fieldType', fieldType);
   return (<Hex className={className} width={width} {...fieldType}>
     {iconElement}
   </Hex>);

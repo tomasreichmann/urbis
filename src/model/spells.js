@@ -285,15 +285,15 @@ export const spells = [
     },
     description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that contain the [lightning] element. This also removes a [cursed] status and any other immunities from the target.'
   },
-  {
-    name: 'Physical immunity',
-    cost: { hex: 1, rock: 1 },
-    target: {
-      shape: FIELD,
-      maxRange: 2
-    },
-    description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that move him or result in dealing him physical damage. This also removes any other immunities from the target.'
-  },
+  // {
+  //   name: 'Physical immunity',
+  //   cost: { hex: 1, rock: 1 },
+  //   target: {
+  //     shape: FIELD,
+  //     maxRange: 2
+  //   },
+  //   description: 'The caster or a target up to 2 fields away from the caster becomes immune to all spells that move him or result in dealing him physical damage. This also removes any other immunities from the target.'
+  // },
   {
     name: 'Frost immunity',
     cost: { hex: 1, frost: 1 },

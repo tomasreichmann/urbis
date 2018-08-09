@@ -26,6 +26,7 @@ const styles = theme => ({
   list: {
     display: 'flex',
     flexDirection: 'column',
+    alignContent: 'flex-start',
     flexWrap: 'wrap',
     marginLeft: -1/2 * theme.spacing.unit,
     marginRight: -1/2 * theme.spacing.unit,
@@ -41,8 +42,8 @@ const styles = theme => ({
 function Spells(props) {
   const { classes } = props;
   const spellElements = spells.map((spell, spellIndex) => <Spell className={classes.spell} key={spellIndex} {...spell} />);
-  const spellElementsPage1 = spellElements.slice(0, 20);
-  const spellElementsPage2 = spellElements.slice(20);
+  const spellElementsPage1 = spellElements.slice(0, 22);
+  const spellElementsPage2 = spellElements.slice(22);
   return (
     <div>
       <Card className={classes.main}>

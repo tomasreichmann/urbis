@@ -39,7 +39,7 @@ const styles = props => theme => {
     label: {
       position: 'absolute',
       left: '50%',
-      top: '100%',
+      bottom: `${-calcMargin}mm`,
       transform: 'translate(-50%, 50%)',
       boxShadow: theme.shadows[1],
       '@media print': {
