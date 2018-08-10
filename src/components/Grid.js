@@ -8,7 +8,7 @@ const styles = props => theme => ({
   root: {
     textAlign: 'center',
     position: 'relative',
-    display: 'flex',
+    display: props.inline ? 'inline-flex' : 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
   },
@@ -40,6 +40,8 @@ function Grid(props) {
 Grid.propTypes = {
   classes: PropTypes.object.isRequired,
   hexWidth: PropTypes.string.isRequired,
+  hexGrid: PropTypes.array.isRequired,
+  inline: PropTypes.bool,
 };
 
 export default (props) => {

@@ -46,7 +46,7 @@ const getHexPoints = (multiplier = 1) => {
 };
 
 function Hex(props) {
-  const { classes, width, height, className, children = 'sample' } = props;
+  const { classes, width, height, className, children, hasInner, hasOuter, insetMultiplier } = props;
   const calcWidthFromHeight = height ? (convertToUnit(height) * 260 / 300) + 'mm' : undefined;
   const calcHeigthFromWidth = width ? (convertToUnit(width) * 300 / 260) + 'mm' : undefined;
   const calcWidth = width ? (convertToUnit(width) + 'mm') : calcWidthFromHeight;
@@ -57,10 +57,10 @@ function Hex(props) {
       width: calcWidth,
       height: calcHeight,
     }}>
-      <div className={classes.content}>{children}</div>
+      { children ? <div className={classes.content}>{children}</div> : null }
       <svg className={classes.svg} viewBox="20 0 260 300" style={{width: calcWidth, height: calcHeight}}>
-        <polygon points={getHexPoints()} className={classes.shapeOuter} />
-        <polygon points={getHexPoints(0.9)} className={classes.shapeInner} />
+        { hasOuter ? <polygon points={getHexPoints()} className={classes.shapeOuter} /> : null}
+        { hasInner ? <polygon points={getHexPoints(insetMultiplier)} className={classes.shapeInner} /> : null}
       </svg>
     </div>
   );
@@ -68,9 +68,15 @@ function Hex(props) {
 
 Hex.propTypes = {
   classes: PropTypes.object.isRequired,
+  hasInner: PropTypes.bool,
+  hasOuter: PropTypes.bool,
+  insetMultiplier: PropTypes.number,
 };
 Hex.defaultProps = {
   color: 'rock',
+  hasInner: false,
+  hasOuter: true,
+  insetMultiplier: 0.9,
 };
 
 export default (props) => {
