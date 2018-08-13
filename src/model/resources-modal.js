@@ -2,22 +2,22 @@ export const resourcesBasic = [
   {
     name: 'Fire',
     resource: { fire: 1 },
-    count: 4,
+    count: 3,
   },
   {
     name: 'Water',
     resource: { water: 1 },
-    count: 4,
+    count: 3,
   },
   {
     name: 'Frost',
     resource: { frost: 1 },
-    count: 4,
+    count: 3,
   },
   {
     name: 'Lightning',
     resource: { lightning: 1 },
-    count: 4,
+    count: 3,
   },
   {
     name: 'Rock',
@@ -65,7 +65,7 @@ export const resourcesModal = [
   {
     name: '+1 range',
     illustration: 'range',
-    count: 4,
+    count: 8,
   },
   {
     name: '+1 jump to next target in range',

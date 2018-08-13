@@ -25,11 +25,13 @@ function Navigation(props) {
           <Link href="/" ><Button component="span" className={classes.button}>
             <Typography variant="title" component="a" color="inherit" >Magic Mayhem</Typography>
           </Button></Link>
+          <Link href="/simulator" ><Button component="a" className={classes.button}>Simulator</Button></Link>
           <Link href="/resources" ><Button component="a" className={classes.button}>Resources</Button></Link>
           <Link href="/resources-modal" ><Button component="a" className={classes.button}>Modal resources</Button></Link>
           <Link href="/statuses" ><Button component="a" className={classes.button}>Statuses</Button></Link>
           <Link href="/spells" ><Button component="a" className={classes.button}>Spells</Button></Link>
           <Link href="/fields" ><Button component="a" className={classes.button}>Fields</Button></Link>
+          <Link href="/battle-map" ><Button component="a" className={classes.button}>Battle map</Button></Link>
           <Link href="/paper-minis" ><Button component="a" className={classes.button}>Paper Minis</Button></Link>
           <Link href="/helpers" ><Button component="a" className={classes.button}>Helpers</Button></Link>
         </Toolbar>

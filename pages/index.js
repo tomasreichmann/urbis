@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
@@ -22,7 +23,7 @@ import IconWound from '../src/components/icons/IconWound';
 import { richText } from '../src/utils/richText';
 import { statuses } from '../src/model/statuses';
 
-const styles = theme => (console.log('theme', theme), {
+const styles = theme => ({
   page: {
     padding: theme.spacing.unit * 10,
   },
@@ -44,7 +45,12 @@ const styles = theme => (console.log('theme', theme), {
   },
   section: {
     marginBottom: theme.spacing.unit * 4,
-  }
+  },
+  statuses: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    marginTop: theme.spacing.unit * 2,
+  },
 });
 
 class Index extends React.Component {
@@ -141,18 +147,18 @@ class Index extends React.Component {
             <Typography gutterBottom variant="headline" component="h1">
               Statuses
             </Typography>
+            <div className={classes.statuses} >
+              {statuses.map(({name, effects}, index) => (<div key={index} className={classnames(classes.section, classes.status)}>
+                <Typography gutterBottom variant="title" component="h2">
+                  {richText(name, {iconSize: 3})}
+                </Typography>
 
-            {statuses.map(({name, effects}, index) => (<div key={index} className={classes.section}>
-              <Typography gutterBottom variant="title" component="h2">
-                {richText(name, {iconSize: 3})}
-              </Typography>
-
-              <Typography variant="subheading" gutterBottom>Effects</Typography>
-              {effects.map((effect, effectIndex) => (<Typography key={effectIndex} gutterBottom >
-                {richText(effect)}
-              </Typography>) )}
-            </div>))}
-
+                <Typography variant="subheading" gutterBottom>Effects</Typography>
+                {effects.map((effect, effectIndex) => (<Typography key={effectIndex} gutterBottom >
+                  {richText(effect)}
+                </Typography>) )}
+              </div>))}
+            </div>
           </PrintPage>
         </div>
       </div>

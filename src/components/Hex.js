@@ -14,7 +14,7 @@ const styles = ({color}) => theme => {
       justifyContent: 'center',
     },
     svg: {
-      display: color ? 'relative' : 'none',
+      display: color ? 'block' : 'none',
       position: 'absolute',
       left: 0,
       right: 0,
