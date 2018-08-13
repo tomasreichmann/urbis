@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
+import Divider from '@material-ui/core/Divider';
+
 import { grey } from '@material-ui/core/colors';
 import { range, shuffle } from 'lodash';
 import classnames from 'classnames';
@@ -21,9 +24,14 @@ const DECK_SHIFT = 0.25;
 const styles = theme => ({
   page: {
     '@media screen': {
-      padding: theme.spacing.unit * 10,
+      padding: theme.spacing.unit * 4,
       boxShadow: theme.shadows[5],
     },
+  },
+  error: {
+    margin: `${theme.spacing.unit * 2}px 0`,
+    backgroundColor: theme.palette.fire.dark,
+    maxWidth: 'none !important',
   },
   controls: {
     margin: `0 ${-theme.spacing.unit}px`,
@@ -31,13 +39,24 @@ const styles = theme => ({
   controlButton: {
     margin: `0 ${theme.spacing.unit}px`,
   },
+  divider: {
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
+  },
   decks: {
+    marginRight: theme.spacing.unit * 4,
+  },
+  decksCasting: {
     display: 'flex',
+    alignItems: 'flex-end',
+    paddingTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
   },
   deck: {
     height: paperSizes.portrait.smallCard.height,
-    marginRight: theme.spacing.unit * 2,
+  },
+  deckTitle: {
+    marginTop: theme.spacing.unit,
   },
   discardPile: {
     height: paperSizes.portrait.smallCard.height,
@@ -50,6 +69,11 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     minHeight: paperSizes.portrait.smallCard.height,
+  },
+  spellTitle: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit,
   },
   hand: {
     display: 'flex',
@@ -82,7 +106,7 @@ const styles = theme => ({
 class Simulator extends React.Component {
 
   state = {
-    message: '...',
+    message: null,
     hand: [],
     deck: shuffle(this.getResourceCards()),
     selectedHandIndexes: [],
@@ -217,40 +241,55 @@ class Simulator extends React.Component {
             <Button onClick={() => this.draw(endOfTurnDraw)} className={classes.controlButton} variant="raised" >Draw cards ({endOfTurnDraw})</Button>
             <Button onClick={this.recycleDiscardPile} className={classes.controlButton} variant="raised" >Recycle discard pile</Button>
           </div>
-          <div>{message}</div>
-          <div className={classes.decks} style={{
-            marginTop: DECK_SHIFT * Math.max(deck.length, discardPile.length) + 'mm',
-          }}>
-            <div>
-              <div className={classes.deck}>{deck.map((card, cardIndex) => <div onClick={() => this.draw()} key={cardIndex} className={classnames(classes.card, classes.deckCard, classes.cardBackFace)} />)}</div>
-              <Typography variant="title" >Deck</Typography>
-            </div>
-            <div>
-              <div className={classes.discardPile}>{discardPile.map((card, cardIndex) => <div key={cardIndex} className={classes.deckCard} >{card}</div>)}</div>
-              <Typography variant="title" >Discard pile</Typography>
-            </div>
-          </div>
-          <div>
-            <Typography variant="title" >Casting</Typography>
-            <div className={classes.casting}>{spellKeys.map((spellKey, spellIndex) => (
-              <div className={classes.spell} key={spellKey}>
-                { this.state[spellKey].map((card, cardIndex) => (
-                  <div key={cardIndex} onClick={() => this.takeBack(spellIndex, cardIndex)} >
-                    {card}
-                  </div>
-                )) }
-                {
-                  selectedHandIndexes.length > 0 ? (
-                    <Button onClick={() => this.addToSpell(spellIndex)} className={classes.cardButton} variant="raised" key="add" >Add</Button>
-                  ) : null
-                }
-                {
-                  this.state[spellKey].length > 0 ? (
-                    <Button onClick={() => this.cast(spellIndex)} className={classes.cardButton} variant="raised" key="cast" >Cast</Button>
-                  ) : null
-                }
+          {message ? (<SnackbarContent
+            className={classes.error}
+            message={message}
+          />) : null}
+
+          <Divider className={classes.divider}/>
+          <div className={classes.decksCasting} >
+            <div className={classes.decks} >
+              <div style={{
+                marginTop: DECK_SHIFT * Math.max(deck.length, discardPile.length) + 'mm',
+              }}>
+                <div className={classes.deck}>{deck.map((card, cardIndex) => <div onClick={() => this.draw()} key={cardIndex} className={classnames(classes.card, classes.deckCard, classes.cardBackFace)} />)}</div>
+                <Typography variant="title" className={classes.deckTitle} >Deck</Typography>
               </div>
-            ))}</div>
+              <div style={{
+                marginTop: DECK_SHIFT * Math.max(deck.length, discardPile.length) + 'mm',
+              }}>
+                <div className={classes.discardPile}>{discardPile.map((card, cardIndex) => <div key={cardIndex} className={classes.deckCard} >{card}</div>)}</div>
+                <Typography variant="title" className={classes.deckTitle} >Discard pile</Typography>
+              </div>
+            </div>
+            <div>
+
+              <div className={classes.casting}>
+                <Typography variant="title" className={classes.deckTitle} >Casting</Typography>
+                {spellKeys.map((spellKey, spellIndex) => (
+                  <div key={spellKey} >
+                    <Typography variant="title" className={classes.spellTitle} >Spell {spellIndex + 1}</Typography>
+                    <div className={classes.spell} >
+                      { this.state[spellKey].map((card, cardIndex) => (
+                        <div key={cardIndex} onClick={() => this.takeBack(spellIndex, cardIndex)} >
+                          {card}
+                        </div>
+                      )) }
+                      {
+                        selectedHandIndexes.length > 0 ? (
+                          <Button onClick={() => this.addToSpell(spellIndex)} className={classes.cardButton} variant="raised" key="add" >Add</Button>
+                        ) : null
+                      }
+                      {
+                        this.state[spellKey].length > 0 ? (
+                          <Button onClick={() => this.cast(spellIndex)} className={classes.cardButton} variant="raised" key="cast" >Cast</Button>
+                        ) : null
+                      }
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <div>
             <Typography variant="title" >Hand</Typography>
