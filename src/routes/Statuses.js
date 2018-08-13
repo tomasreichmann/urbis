@@ -12,7 +12,7 @@ import { paperSizes } from '../utils/paperSizes';
 
 const styles = theme => ({
   main: {
-    ...paperSizes.portrait.A5,
+    ...paperSizes.portrait.A4,
     '@media print': {
       margin: 0,
       boxShadow: 'none',
