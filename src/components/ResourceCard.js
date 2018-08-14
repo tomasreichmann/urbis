@@ -46,16 +46,22 @@ const SpreadField = <Hex {...fieldHexOptions} color="lightning"/>;
 const GridPreset = ({board}) => <Grid hexGrid={board} hexWidth={hexWidth} inline /> || null;
 
 const illustrationMap = {
-  line: () => <div><GridPreset board={[[TargetField,TargetField,TargetField,]]} /></div>,
+  oneField: () => <div><GridPreset board={[[CasterField,TargetField]]} /></div>,
+  line: () => <div><GridPreset board={[[TargetField,TargetField,TargetField]]} /></div>,
   cone: () => <div><GridPreset board={[
-    [EmptyField,TargetField,],
-    [TargetField,TargetField,],
+    [EmptyField,TargetField],
+    [TargetField,TargetField],
     [CasterField,TargetField,TargetField],
   ]} /></div>,
   circle: () => <div><GridPreset board={[
     [EmptyField,TargetField,TargetField],
     [TargetField,CasterField,TargetField],
     [EmptyField,TargetField,TargetField],
+  ]} /></div>,
+  anywhere: () => <div><GridPreset board={[
+    [CasterField,EmptyField,EmptyField],
+    [EmptyField,EmptyField,EmptyField],
+    [EmptyField,EmptyField,TargetField],
   ]} /></div>,
   all: () => <div><GridPreset board={[
     [CasterField,TargetField,TargetField],
@@ -68,7 +74,7 @@ const illustrationMap = {
     [EmptyField,SpreadField,SpreadField],
   ]} /></div>,
   jump: () => <div><GridPreset board={[[CasterField,SpreadField,TargetField,SpreadField,TargetField]]} /></div>,
-  range: () => <div><GridPreset board={[[CasterField,SpreadField,TargetField,]]} /></div>,
+  range: () => <div><GridPreset board={[[CasterField,SpreadField,TargetField]]} /></div>,
   damage: () => <div><IconWound label={null} iconSize={5}/></div>,
   exclude: () => <div><GridPreset board={[
     [TargetField,TargetField,TargetField],

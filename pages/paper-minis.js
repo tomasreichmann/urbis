@@ -54,7 +54,7 @@ class PaperMinis extends React.Component {
                   7 * 3
                 )
                 .map( (itemPage, itemPageindex, pages) => (
-                  <PrintPage margin="5mm" label={<Typography >Paper minis {itemPageindex + 1} / {pages.length}</Typography>}>
+                  <PrintPage key={itemPageindex} margin="5mm" label={<Typography >Paper minis {itemPageindex + 1} / {pages.length}</Typography>}>
                     <div className={classes.list} >
                       { itemPage.map( ({ width, height, imageUri, color, hasPointer}, itemIndex) => (
                         <div key={itemPageindex + '-' + itemIndex} className={classes.item}>

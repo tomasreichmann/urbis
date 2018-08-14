@@ -9,12 +9,13 @@ function FieldHex(props) {
     className,
     icon,
     width,
+    player,
     labelVariant = 'headline',
     iconSize = 7,
     name,
   ...fieldType
 } = props;
-  const labelElement = <Typography variant={labelVariant} style={{ color: 'white', marginTop: '1mm' }} >{name}</Typography>;
+  const labelElement = <Typography variant={labelVariant} style={{ color: 'white', marginTop: '1mm' }} >{name}{player !== undefined ? ` Player: ${player}` : null}</Typography>;
   const iconElement = icon ? <Icon label={labelElement} iconSize={iconSize} hasCircle iconUri={`/static/${icon}.png`} /> : labelElement;
   return (<Hex className={className} width={width} {...fieldType} hasInner >
     {iconElement}

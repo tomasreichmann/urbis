@@ -25,6 +25,7 @@ function Navigation(props) {
           <Link href="/" ><Button component="span" className={classes.button}>
             <Typography variant="title" component="a" color="inherit" >Magic Mayhem</Typography>
           </Button></Link>
+          <Link href="/rules-modal" ><Button component="a" className={classes.button}>Modal rules</Button></Link>
           <Link href="/simulator" ><Button component="a" className={classes.button}>Simulator</Button></Link>
           <Link href="/resources" ><Button component="a" className={classes.button}>Resources</Button></Link>
           <Link href="/resources-modal" ><Button component="a" className={classes.button}>Modal resources</Button></Link>

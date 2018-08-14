@@ -46,7 +46,7 @@ const getHexPoints = (multiplier = 1) => {
 };
 
 function Hex(props) {
-  const { classes, width, height, className, children, hasInner, hasOuter, insetMultiplier } = props;
+  const { classes, width, height, className, children, hasInner, hasOuter, insetMultiplier, ...otherProps } = props;
   const calcWidthFromHeight = height ? (convertToUnit(height) * 260 / 300) + 'mm' : undefined;
   const calcHeigthFromWidth = width ? (convertToUnit(width) * 300 / 260) + 'mm' : undefined;
   const calcWidth = width ? (convertToUnit(width) + 'mm') : calcWidthFromHeight;
@@ -56,7 +56,7 @@ function Hex(props) {
     <div className={classnames(className, classes.root)} style={{
       width: calcWidth,
       height: calcHeight,
-    }}>
+    }} {...otherProps}>
       { children ? <div className={classes.content}>{children}</div> : null }
       <svg className={classes.svg} viewBox="20 0 260 300" style={{width: calcWidth, height: calcHeight}}>
         { hasOuter ? <polygon points={getHexPoints()} className={classes.shapeOuter} /> : null}

@@ -1,4 +1,4 @@
 import React from 'react';
 import Icon from './Icon';
 
-export default (props) => <Icon iconUri="/static/hex.png" hasCircle label="Cursed" {...props} />;
+export default (props) => <Icon iconUri="/static/hex.png" hasCircle label="cursed" {...props} />;

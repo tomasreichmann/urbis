@@ -1,3 +1,6 @@
+import { elements, shapes, shapesMap, elementsMap } from "../model/resources-modal";
+import { intersection } from 'lodash';
+
 const unitMap = {
   mm: {
     mm: 1,
@@ -26,3 +29,59 @@ export const convertToUnit = (str, toUnit = 'mm', map = unitMap) => {
   }
   throw new Error(`Cannot convert ${str} to ${toUnit}`);
 };
+
+export const normalizeToFunction = (item) => {
+  return typeof item === 'function' ? item : () => item;
+}
+
+export const getSpellDescription = (components) => {
+  const spell = components.reduce((spell, {slug}) => (
+    {
+      ...spell,
+      [slug]: (spell[slug] || 0) + 1,
+    }
+  ), {
+    range: 1,
+    shape: 'field',
+    exclude: 0,
+  });
+
+  const elementTypes = intersection(Object.keys(spell), elements.map(element => element.slug));
+
+  if (components.length === 0) {
+    return 'Add component cards to create a spell';
+  }
+
+  if (elementTypes.length > 1) {
+    return `Spell is invalid! It contains more than one type of elements: ${elementTypes.join(', ')}.`;
+  }
+
+  if (elementTypes.length === 0) {
+    return `Spell is invalid! Add at least one card of a single element is required.`;
+  }
+
+  spell.element = elementTypes[0];
+  spell.strength = components.filter(component => component.slug === spell.element).length;
+
+  const elementShapes = intersection(Object.keys(spell), shapes.map(shape => shape.slug));
+
+  if (elementShapes.length > 1) {
+    return `Spell is invalid! It contains more than one element shape: ${elementShapes.join(', ')}.`;
+  }
+  spell.shape = elementShapes[0] || spell.shape;
+  spell.damage = (spell.extraDamage || 0) + (elementsMap[spell.element].damage || 0);
+
+  const effects = [
+    `This is a [${spell.element}|${spell.element}] spell`,
+    ...shapesMap[spell.shape].effects,
+    spell.exclude > 0 ? `except ${spell.exclude} field${spell.exclude > 1 ? 's' : ''}` : null,
+    spell.damage > 0 ? `causes [wound|${spell.damage}] wound${spell.damage > 1 ? 's' : ''}` : null,
+    ...elementsMap[spell.element].effects,
+  ];
+
+  return effects
+    .map(effect => normalizeToFunction(effect)(spell))
+    .filter(effect => effect !== null)
+    .join(', ');
+
+}
