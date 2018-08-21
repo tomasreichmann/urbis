@@ -34,30 +34,34 @@ export const normalizeToFunction = (item) => {
   return typeof item === 'function' ? item : () => item;
 }
 
-export const getSpellDescription = (components) => {
-  const spell = components.reduce((spell, {slug}) => (
+export const parseSpell = (components) => {
+  const spell = components.reduce((spell, {strength = 1, slug}) => (
     {
       ...spell,
-      [slug]: (spell[slug] || 0) + 1,
+      [slug]: (spell[slug] || 0) + strength,
     }
   ), {
     range: 1,
     shape: 'field',
     exclude: 0,
+    isValid: false,
   });
 
   const elementTypes = intersection(Object.keys(spell), elements.map(element => element.slug));
 
   if (components.length === 0) {
-    return 'Add component cards to create a spell';
+    spell.description = 'Add component cards to create a spell';
+    return spell;
   }
 
   if (elementTypes.length > 1) {
-    return `Spell is invalid! It contains more than one type of elements: ${elementTypes.join(', ')}.`;
+    spell.description = `Spell is invalid! It contains more than one type of elements: ${elementTypes.join(', ')}.`;
+    return spell;
   }
 
   if (elementTypes.length === 0) {
-    return `Spell is invalid! Add at least one card of a single element is required.`;
+    spell.description = `Spell is invalid! Add at least one card of a single element is required.`;
+    return spell;
   }
 
   spell.element = elementTypes[0];
@@ -66,7 +70,8 @@ export const getSpellDescription = (components) => {
   const elementShapes = intersection(Object.keys(spell), shapes.map(shape => shape.slug));
 
   if (elementShapes.length > 1) {
-    return `Spell is invalid! It contains more than one element shape: ${elementShapes.join(', ')}.`;
+    spell.description = `Spell is invalid! It contains more than one element shape: ${elementShapes.join(', ')}.`;
+    return spell;
   }
   spell.shape = elementShapes[0] || spell.shape;
   spell.damage = (spell.extraDamage || 0) + (elementsMap[spell.element].damage || 0);
@@ -79,9 +84,10 @@ export const getSpellDescription = (components) => {
     ...elementsMap[spell.element].effects,
   ];
 
-  return effects
+  spell.description = effects
     .map(effect => normalizeToFunction(effect)(spell))
     .filter(effect => effect !== null)
     .join(', ');
-
+  spell.isValid = true;
+  return spell;
 }

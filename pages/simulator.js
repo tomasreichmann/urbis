@@ -8,7 +8,7 @@ import SnackbarContent from '@material-ui/core/SnackbarContent';
 import Divider from '@material-ui/core/Divider';
 
 import { grey } from '@material-ui/core/colors';
-import { range, shuffle } from 'lodash';
+import { range, shuffle, flatten } from 'lodash';
 import classnames from 'classnames';
 
 import withRoot from '../src/withRoot';
@@ -21,8 +21,9 @@ import { fieldMap } from '../src/model/fields';
 import { startingHandSize, endOfTurnDraw, maxSpells } from '../src/model/game';
 import { resources as resourceTypes } from '../src/model/resources-modal';
 import { paperSizes } from '../src/utils/paperSizes';
-import { convertToUnit, getSpellDescription } from '../src/utils/helpers';
+import { convertToUnit, parseSpell } from '../src/utils/helpers';
 import { richText } from '../src/utils/richText';
+import { avatars } from '../src/model/minis';
 
 const DECK_SHIFT = 0.25;
 
@@ -160,6 +161,25 @@ const phases = {
   },
 };
 
+const findField = (board, predicate) => (
+  flatten(board).find(predicate)
+);
+
+const getDistance = (field1, field2) => {
+  const x1 = field1.column - (field1.row - (field1.row % 2)) / 2;
+  const z1 = field1.row;
+  const y1 = -x1 - z1;
+
+  const x2 = field2.column - (field2.row - (field2.row % 2)) / 2;
+  const z2 = field2.row;
+  const y2 = -x2 - z2;
+  return Math.max(
+    Math.abs(x1 - x2),
+    Math.abs(y1 - y2),
+    Math.abs(z1 - z2),
+  );
+};
+
 const getCastingKey = (index) => (`casting_${index}`);
 
 const castingKeys = range(maxSpells).reduce((castingKeyMap, spellIndex) => ({...castingKeyMap, [getCastingKey(spellIndex)]: []}), {});
@@ -179,6 +199,13 @@ class Simulator extends React.Component {
     ...castingKeys,
     currentPhase: SELECT_SPAWN,
     currentPlayer: 0,
+    players: avatars.map((avatar, playerIndex) => ({
+      ...avatar,
+      name: `Player ${playerIndex}`,
+      index: playerIndex,
+      width: '10mm',
+      height: '20mm',
+    })),
     board: [
       [
         { row: 0, column: 0, key: EMPTY },
@@ -244,7 +271,36 @@ class Simulator extends React.Component {
     ];
     newState.board[row][column] = {
       ...this.state.board[row][column],
-      player: this.state.currentPlayer,
+      player: this.state.players[this.state.currentPlayer],
+    };
+    this.setState(newState);
+  }
+
+  moveToField = (property, fromRow, fromColumn, toRow, toColumn) => {
+    const newState = {
+      board: [
+        ...this.state.board
+      ],
+      currentPhase: DRAW_STARTING_HAND
+    };
+    // TODO: REMOVE PLAYER from field
+    // TODO: ADD PLAYER to field
+
+    // TODO: if spell left ? TARGET_SPELL : CLEANUP
+
+    newState.board[fromRow] = [
+      ...this.state.board[fromRow]
+    ];
+    newState.board[fromRow][fromColumn] = {
+      ...this.state.board[fromRow][fromColumn],
+      [property]: null,
+    };
+    newState.board[toRow] = [
+      ...newState.board[toRow]
+    ];
+    newState.board[toRow][toColumn] = {
+      ...newState.board[toRow][toColumn],
+      [property]: this.state.board[fromRow][fromColumn][property],
     };
     this.setState(newState);
   }
@@ -364,7 +420,16 @@ class Simulator extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { message: stateMessage, deck, hand, discardPile, selectedHandIndexes, currentPhase, board } = this.state;
+    const {
+      message: stateMessage,
+      deck,
+      hand,
+      discardPile,
+      selectedHandIndexes,
+      currentPhase,
+      board,
+      currentPlayer
+    } = this.state;
 
     const spellKeys = range(maxSpells).map(spellIndex => getCastingKey(spellIndex));
     const phase = phases[currentPhase];
@@ -377,59 +442,50 @@ class Simulator extends React.Component {
     }
 
     const hexWidth = '35mm';
-    const spawnableFieldProps = ({key}, row, column) => (key === 'grass' && currentPhase === SELECT_SPAWN ? {
+    const spawnFieldProps = ({key, row, column}) => (key === 'grass' && currentPhase === SELECT_SPAWN ? {
       className: classes.selectableField,
+      isSelectable: true,
       color: 'primary',
-      onClick: () => this.spawn(row, column) // TODO: make board abstract, pass spawn params
+      onClick: () => this.spawn(row, column)
     } : {});
     const fieldHexOptions = {
       width: hexWidth,
       iconSize: 4,
-      // labelVariant: 'body2'
+    };
+    const moveFieldProps = (field) => {
+      const playerField = findField(
+        board,
+        (boardField) => (boardField.player && boardField.player.index === currentPlayer)
+      );
+      if (currentPhase === MOVE && field.key !== EMPTY) {
+        if (getDistance(
+          playerField,
+          field
+        ) <= 1) {
+          return {
+            className: classes.selectableField,
+            isSelectable: true,
+            color: (field.player && field.player.index === this.state.currentPlayer) ? 'secondary' : 'primary',
+            onClick: () => this.moveToField('player', playerField.row, playerField.column, field.row, field.column),
+          }
+        }
+        return {
+          color: 'death'
+        };
+      }
+      return {};
     };
     const EmptyField = () => <FieldHex width={hexWidth} />;
-    const hexGrid = board.map(boardRow => boardRow.map(({ row, column, ...field }) => field.key === EMPTY
-      ? <EmptyField key={`${row}-${column}`} />
+    const hexGrid = board.map(boardRow => boardRow.map((field) => field.key === EMPTY
+      ? <EmptyField key={`${field.row}-${field.column}`} />
       : <FieldHex
         {...field}
-        key={`${row}-${column}`}
+        key={`${field.row}-${field.column}`}
         {...fieldHexOptions}
-        {...spawnableFieldProps(field, row, column)}
+        {...spawnFieldProps(field)}
+        {...moveFieldProps(field)}
       />
     ))
-    // const board = [
-    //   [
-    //     EmptyField,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.everburningBrazier} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(0, 2)}/>,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.glacier} />,
-    //   ],
-    //   [
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(1, 0)}/>,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(1, 1)}/>,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(1, 2)}/>,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(1, 3)}/>,
-    //   ],
-    //   [
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.lightningRod} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.divineChapel} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.bottomlessAbyss} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.wizardTower} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.quarry} />,
-    //   ],
-    //   [
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(3, 0)} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(3, 1)} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(3, 2)} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(3, 3)} />,
-    //   ],
-    //   [
-    //     EmptyField,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.pentagram} />,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.grass} {...spawnableFieldProps(4, 2)}/>,
-    //     <FieldHex {...fieldHexOptions} {...fieldMap.pond} />,
-    //   ],
-    // ];
 
     return (
       <div className={classes.root}>
@@ -473,7 +529,7 @@ class Simulator extends React.Component {
                 <Typography variant="title" className={classes.deckTitle} >Casting</Typography>
                 {spellKeys.map((spellKey, spellIndex) => (
                   <div key={spellKey} >
-                    <Typography variant="title" className={classes.spellTitle} >Spell {spellIndex + 1}: {richText(getSpellDescription(this.state[spellKey]))}</Typography>
+                    <Typography variant="title" className={classes.spellTitle} >Spell {spellIndex + 1}: {richText(parseSpell(this.state[spellKey]).description)}</Typography>
                     <div className={classes.spell} >
                       { this.state[spellKey].map((card, cardIndex) => (
                         <div key={cardIndex} onClick={() => this.takeBack(spellIndex, cardIndex)} >

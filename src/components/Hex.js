@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { convertToUnit } from '../utils/helpers';
 
-const styles = ({color}) => theme => {
+const styles = ({color, isSelectable = false}) => theme => {
   return {
     root: {
       textAlign: 'center',
@@ -12,6 +12,9 @@ const styles = ({color}) => theme => {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
+      '&:hover svg polygon': isSelectable ? {
+          fill: theme.palette[color].light,
+      } : {}
     },
     svg: {
       display: color ? 'block' : 'none',
