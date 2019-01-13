@@ -1,92 +1,23 @@
-import IconFire from '../components/icons/IconFire';
-import IconWater from '../components/icons/IconWater';
-import IconLightning from '../components/icons/IconLightning';
-import IconFrost from '../components/icons/IconFrost';
-import IconRock from '../components/icons/IconRock';
-import IconHex from '../components/icons/IconHex';
+import ResourceIcon from "../components/icons/ResourceIcon.js";
+const resources = require("../model/resources.json");
 
-import IconWet from '../components/icons/IconWet';
-import IconBurning from '../components/icons/IconBurning';
-import IconFrozen from '../components/icons/IconFrozen';
-import IconCursed from '../components/icons/IconCursed';
-import IconLife from '../components/icons/IconLife';
-import IconWound from '../components/icons/IconWound';
-
-
-export const normalizeNumber = (nr) => {
+export const normalizeNumber = nr => {
   const int = parseInt(nr);
   return isNaN(int) ? undefined : int;
 };
 
-export const getIconProps = ([match, label, count]) => ({...(label ? {label} : {}), count: normalizeNumber(count)});
+export const getIconProps = ([_match, resourceKey]) => ({
+  ...(resourceKey ? { resourceKey } : {})
+});
 
-export const ruleList = [
-  {
-    match: /burning[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconBurning,
+export const resourceRules = Object.keys(resources).map(resourceKey => {
+  return {
+    match: new RegExp(`(${resourceKey})`),
+    component: ResourceIcon,
     getProps: getIconProps
-  },
-  {
-    match: /fire[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconFire,
-    getProps: getIconProps
-  },
-  {
-    match: /water[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconWater,
-    getProps: getIconProps
-  },
-  {
-    match: /lightning[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconLightning,
-    getProps: getIconProps
-  },
-  {
-    match: /frost[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconFrost,
-    getProps: getIconProps
-  },
-  {
-    match: /rock[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconRock,
-    getProps: getIconProps
-  },
-  {
-    match: /hex[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconHex,
-    getProps: getIconProps
-  },
-  {
-    match: /wet[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconWet,
-    getProps: getIconProps
-  },
-  {
-    match: /burning[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconBurning,
-    getProps: getIconProps
-  },
-  {
-    match: /frozen[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconFrozen,
-    getProps: getIconProps
-  },
-  {
-    match: /cursed[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconCursed,
-    getProps: getIconProps
-  },
-  {
-    match: /life[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconLife,
-    getProps: getIconProps
-  },
-  {
-    match: /wound[|]?([^\|]*)?[|]?([^\|]*)?/,
-    component: IconWound,
-    getProps: getIconProps
-  },
-]
+  };
+});
+export const ruleList = [...resourceRules];
 
 export const getMatch = (expression, extraProps) => {
   for (let ruleIndex = 0; ruleIndex < ruleList.length; ruleIndex++) {
@@ -94,17 +25,23 @@ export const getMatch = (expression, extraProps) => {
     const match = expression.match(rule.match);
     const Element = rule.component;
     if (match) {
-      return <Element {...rule.getProps(match)} {...extraProps}/>;
+      return <Element {...rule.getProps(match)} {...extraProps} />;
     }
   }
   return null;
-}
+};
 
 export const richText = (text, extraProps) => {
   const output = [];
   const matches = text.split(/\[([^\]]*)\]/);
-  matches.forEach( (match, matchIndex) => {
-    output.push(matchIndex % 2 === 1 && getMatch(match, extraProps) || match );
-  })
-  return <span>{output.map((outputItem, outputIndex) => <span key={outputIndex}>{outputItem}</span>)}</span>;
+  matches.forEach((match, matchIndex) => {
+    output.push((matchIndex % 2 === 1 && getMatch(match, extraProps)) || match);
+  });
+  return (
+    <span>
+      {output.map((outputItem, outputIndex) => (
+        <span key={outputIndex}>{outputItem}</span>
+      ))}
+    </span>
+  );
 };

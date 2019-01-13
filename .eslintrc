@@ -1,0 +1,9 @@
+{
+  "extends": "react-app",
+  "plugins": ["prettier"],
+  "no-undef": 2,
+  "no-unused-vars": 1,
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}

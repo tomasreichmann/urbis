@@ -1,8 +1,8 @@
-import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
-import JssProvider from 'react-jss/lib/JssProvider';
-import flush from 'styled-jsx/server';
-import getPageContext from '../src/getPageContext';
+import React from "react";
+import Document, { Head, Main, NextScript } from "next/document";
+import JssProvider from "react-jss/lib/JssProvider";
+import flush from "styled-jsx/server";
+import getPageContext from "../src/getPageContext";
 
 class MyDocument extends Document {
   render() {
@@ -10,21 +10,24 @@ class MyDocument extends Document {
     return (
       <html lang="en" dir="ltr">
         <Head>
-          <title>Magic Mayhem</title>
+          <title>Urbis</title>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta
             name="viewport"
             content={
-              'user-scalable=0, initial-scale=1, ' +
-              'minimum-scale=1, width=device-width, height=device-height'
+              "user-scalable=0, initial-scale=1, " +
+              "minimum-scale=1, width=device-width, height=device-height"
             }
           />
           {/* PWA primary color */}
-          <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
+          <meta
+            name="theme-color"
+            content={pageContext.theme.palette.primary.main}
+          />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+            href="https://fonts.googleapis.com/css?family=Eczar:300,400,500"
           />
         </Head>
         <body>
@@ -73,11 +76,13 @@ MyDocument.getInitialProps = ctx => {
         <style
           id="jss-server-side"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: pageContext.sheetsRegistry.toString() }}
+          dangerouslySetInnerHTML={{
+            __html: pageContext.sheetsRegistry.toString()
+          }}
         />
         {flush() || null}
       </React.Fragment>
-    ),
+    )
   };
 };
 

@@ -1,0 +1,449 @@
+{
+  "wood": {
+    "resourceKey": "wood",
+    "label": "wood",
+    "cs": "dřevo",
+    "consumptionStartYear": 1,
+    "consumption": {
+      "winter": 2,
+      "spring": 1,
+      "summer": 1,
+      "autumn": 1
+    },
+    "price": {
+      "low": 0.5,
+      "regular": 1,
+      "high": 2
+    },
+    "iconUri": "https://vignette.wikia.nocookie.net/clubpenguin/images/6/68/Quest_item_Wood_Planks_icon.png/revision/latest?cb=20170319203740"
+  },
+  "stone": {
+    "resourceKey": "stone",
+    "label": "stone",
+    "cs": "kámen",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 0.5,
+      "regular": 1,
+      "high": 2
+    },
+    "iconUri": "http://www.greenvilleconcrete.net/images/concrete-block-icon.png"
+  },
+  "metal": {
+    "resourceKey": "metal",
+    "label": "metal",
+    "cs": "kov",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 0.5,
+      "regular": 1,
+      "high": 2
+    },
+    "iconUri": "https://openclipart.org/image/2400px/svg_to_png/210353/misc-molybdenum.png"
+  },
+  "crops": {
+    "resourceKey": "crops",
+    "label": "crops",
+    "cs": "obilí",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 0.5,
+      "regular": 1,
+      "high": 2
+    },
+    "iconUri": "https://vignette.wikia.nocookie.net/farmville/images/5/52/Golden_Wheat-icon.png/revision/latest?cb=20140106172441"
+  },
+  "herbs": {
+    "resourceKey": "herbs",
+    "label": "herbs",
+    "cs": "bylinky",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 0.5,
+      "regular": 1,
+      "high": 2
+    },
+    "iconUri": "http://mentalgameshot.com/sites/default/files/styles/panopoly_image_full/public/general/herbs-icon-positive.png?itok=ZaQAH5t2"
+  },
+  "cattle": {
+    "resourceKey": "cattle",
+    "label": "cattle",
+    "cs": "dobytek",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 3,
+      "regular": 6,
+      "high": 12
+    },
+    "iconUri": "https://www.shareicon.net/download/2015/12/13/687001_face_512x512.png"
+  },
+  "horse": {
+    "resourceKey": "horse",
+    "label": "horse",
+    "cs": "kůň",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 3,
+      "regular": 6,
+      "high": 12
+    },
+    "iconUri": "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emoji-one/104/horse-face_1f434.png"
+  },
+  "leather": {
+    "resourceKey": "leather",
+    "label": "leather",
+    "cs": "kůže",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 1.5,
+      "regular": 3,
+      "high": 5
+    },
+    "iconUri": "http://static1.squarespace.com/static/578aa530725e2593d407843b/578aa70a414fb5187fb3a372/5a53da0dec212da4b0d4c8c8/1516935945424/port_RefinedHardLeather_icon.png?format=1000w"
+  },
+  "food": {
+    "resourceKey": "food",
+    "label": "food",
+    "cs": "jídlo",
+    "consumptionStartYear": 1,
+    "consumption": {
+      "winter": 1,
+      "spring": 1,
+      "summer": 1,
+      "autumn": 1
+    },
+    "price": {
+      "low": 3,
+      "regular": 6,
+      "high": 12
+    },
+    "iconUri": "http://www.iconsalot.com/asset/icons/freepik/food-and-drink-2/512/059-bread-icon.png"
+  },
+  "fabric": {
+    "resourceKey": "fabric",
+    "label": "fabric",
+    "cs": "látka",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 2,
+      "regular": 4,
+      "high": 7
+    },
+    "iconUri": "http://lm.craftnorrath.com/wp-content/plugins/landmark-recipes/images/icons/resource_fabric_bolt_white.png"
+  },
+  "clothes": {
+    "resourceKey": "clothes",
+    "label": "clothes",
+    "cs": "oblečení",
+    "consumptionStartYear": 2,
+    "consumption": {
+      "winter": 2,
+      "spring": 1,
+      "summer": 1,
+      "autumn": 1
+    },
+    "price": {
+      "low": 3,
+      "regular": 6,
+      "high": 12
+    },
+    "iconUri": "https://d1u5p3l4wpay3k.cloudfront.net/battlegrounds_gamepedia_en/d/d6/Icon_equipment_Body_F_01.png"
+  },
+  "tools": {
+    "resourceKey": "tools",
+    "label": "tools",
+    "cs": "nářadí",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 3.5,
+      "regular": 7,
+      "high": 14
+    },
+    "iconUri": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Tools-spanner-hammer.svg/1024px-Tools-spanner-hammer.svg.png"
+  },
+  "armaments": {
+    "resourceKey": "armaments",
+    "label": "armaments",
+    "cs": "výzbroj",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 4,
+      "regular": 8,
+      "high": 16
+    },
+    "iconUri": "http://megapanda.net/images/dj/0216/020616-125457273-sm.png"
+  },
+  "alcohol": {
+    "resourceKey": "alcohol",
+    "label": "alcohol",
+    "cs": "alkohol",
+    "consumptionStartYear": 3,
+    "consumption": {
+      "winter": 1,
+      "spring": 1,
+      "summer": 1,
+      "autumn": 1
+    },
+    "price": {
+      "low": 2,
+      "regular": 4,
+      "high": 7
+    },
+    "iconUri": "https://png.icons8.com/color/260/wine-bottle.png"
+  },
+  "books": {
+    "resourceKey": "books",
+    "label": "books",
+    "cs": "knihy",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 0.5,
+      "regular": 1,
+      "high": 2
+    },
+    "iconUri": "https://vignette.wikia.nocookie.net/darksouls/images/7/7a/%D0%A1%D0%B2%D1%8F%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%84%D0%BE%D0%BB%D0%B8%D0%B0%D0%BD%D1%82_%D0%B8%D0%B7_%D0%9B%D0%BE%D1%82%D1%80%D0%B8%D0%BA%D0%B0.png/revision/latest?cb=20160915200946&path-prefix=ru"
+  },
+  "medicine": {
+    "resourceKey": "medicine",
+    "label": "medicine",
+    "cs": "léky",
+    "consumptionStartYear": 4,
+    "consumption": {
+      "winter": 1,
+      "spring": 1,
+      "summer": 1,
+      "autumn": 1
+    },
+    "price": {
+      "low": 2.5,
+      "regular": 5,
+      "high": 10
+    },
+    "iconUri": "https://vignette.wikia.nocookie.net/dungeonboss/images/3/3c/Heal_Potion_Icon.png/revision/latest?cb=20160510154959"
+  },
+  "jewelry": {
+    "resourceKey": "jewelry",
+    "label": "jewelry",
+    "cs": "šperky",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 5,
+      "regular": 10,
+      "high": 20
+    },
+    "iconUri": "https://png.icons8.com/color/260/one-ring.png"
+  },
+  "art": {
+    "resourceKey": "art",
+    "label": "art",
+    "cs": "umění",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 2.5,
+      "regular": 5,
+      "high": 10
+    },
+    "iconUri": "https://www.freeiconspng.com/uploads/arts-icon--desktop-education-icons--softiconsm-20.png"
+  },
+  "gold": {
+    "resourceKey": "gold",
+    "label": "gold",
+    "cs": "zlato",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 1,
+      "regular": 1,
+      "high": 1
+    },
+    "iconUri": "https://png.pngtree.com/svg/20161028/coins_1193998.png"
+  },
+  "footman": {
+    "resourceKey": "footman",
+    "label": "footman",
+    "cs": "pěšák",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 6.5,
+      "regular": 13,
+      "high": 26
+    },
+    "iconUri": "https://c-6rtwjumjzx7877x24i6z0u8q9bufd8px2ehqtzikwtsyx2esjy.g00.gamepedia.com/g00/3_c-6hna1.lfrjujinf.htr_/c-6RTWJUMJZX77x24myyux78x3ax2fx2fi6z0u8q9bufd8p.hqtzikwtsy.sjyx2fhna1_lfrjujinf_jsx2f8x2f83x2fNhts_zsny_x78ujfwrfs_utwywfny.uslx3fajwx78ntsx3d939i247hf9i6i29k28ik5j340k50fk39x26n65h.rfwpx3dnrflj_$/$/$/$/$"
+  },
+  "archer": {
+    "resourceKey": "archer",
+    "label": "archer",
+    "cs": "střelec",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 7,
+      "regular": 14,
+      "high": 28
+    },
+    "iconUri": "https://c-6rtwjumjzx7877x24i6z0u8q9bufd8px2ehqtzikwtsyx2esjy.g00.gamepedia.com/g00/3_c-6hna1.lfrjujinf.htr_/c-6RTWJUMJZX77x24myyux78x3ax2fx2fi6z0u8q9bufd8p.hqtzikwtsy.sjyx2fhna1_lfrjujinf_jsx2f1x2f1ix2fNhts_zsny_fwhmjw_utwywfny.uslx3fajwx78ntsx3d71f0k02i301671g55g24ff3012jff556x26n65h.rfwpx3dnrflj_$/$/$/$/$"
+  },
+  "cavalry": {
+    "resourceKey": "cavalry",
+    "label": "cavalry",
+    "cs": "jezdec",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 9.5,
+      "regular": 19,
+      "high": 38
+    },
+    "iconUri": "https://c-6rtwjumjzx7877x24i6z0u8q9bufd8px2ehqtzikwtsyx2esjy.g00.gamepedia.com/g00/3_c-6hna1.lfrjujinf.htr_/c-6RTWJUMJZX77x24myyux78x3ax2fx2fi6z0u8q9bufd8p.hqtzikwtsy.sjyx2fhna1_lfrjujinf_jsx2f6x2f6jx2fNhts_zsny_gfwgfwnfs_mtwx78jrfs_utwywfny.uslx3fajwx78ntsx3dk74iifjjgg28101ig77k47f7kgj85ij7x26n65h.rfwpx3dnrflj_$/$/$/$/$"
+  },
+  "knight": {
+    "resourceKey": "knight",
+    "label": "knight",
+    "cs": "rytíř",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 13.5,
+      "regular": 27,
+      "high": 54
+    },
+    "iconUri": "https://c-6rtwjumjzx7877x24i6z0u8q9bufd8px2ehqtzikwtsyx2esjy.g00.gamepedia.com/g00/3_c-6hna1.lfrjujinf.htr_/c-6RTWJUMJZX77x24myyux78x3ax2fx2fi6z0u8q9bufd8p.hqtzikwtsy.sjyx2fhna1_lfrjujinf_jsx2fix2fi9x2fNhts_zsny_psnlmy_utwywfny.uslx3fajwx78ntsx3di350gf2k8gjkhh14ff2196k8kk58h44ix26n65h.rfwpx3dnrflj_$/$/$/$/$"
+  },
+  "peasant": {
+    "resourceKey": "peasant",
+    "label": "peasant",
+    "cs": "nádeník",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 2.5,
+      "regular": 5,
+      "high": 10
+    },
+    "iconUri": "https://c-6rtwjumjzx7877x24i6z0u8q9bufd8px2ehqtzikwtsyx2esjy.g00.gamepedia.com/g00/3_c-6hna1.lfrjujinf.htr_/c-6RTWJUMJZX77x24myyux78x3ax2fx2fi6z0u8q9bufd8p.hqtzikwtsy.sjyx2fhna1_lfrjujinf_jsx2fix2fi7x2fNhts_zsny_gznqijw_utwywfny.uslx3fajwx78ntsx3dhf8kk7673g993kffk769343j4196k5kfx26n65h.rfwpx3dnrflj_$/$/$/$/$"
+  },
+  "pacient": {
+    "resourceKey": "pacient",
+    "label": "pacient",
+    "cs": "pacient",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 0,
+      "regular": 0,
+      "high": 0
+    },
+    "iconUri": "http://www.iconsalot.com/asset/icons/dinosoftlabs/medical-and-health/512/005-injury-2-icon.png"
+  },
+  "happiness": {
+    "resourceKey": "happiness",
+    "label": "happiness",
+    "cs": "radost",
+    "consumption": {
+      "winter": 0,
+      "spring": 0,
+      "summer": 0,
+      "autumn": 0
+    },
+    "price": {
+      "low": 0,
+      "regular": 0,
+      "high": 0
+    },
+    "iconUri": "https://cdn.iconscout.com/icon/free/png-256/face-smile-happy-emoji-37693.png"
+  }
+}

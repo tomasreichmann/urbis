@@ -1,0 +1,154 @@
+{
+  "baker1": {
+    "specialistKey": "baker1",
+    "name": "Vojtěch  Vlach",
+    "vocation": "baker",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/81/9f/56/819f56080fbe5897755269df252375f3.jpg"
+  },
+  "baker2": {
+    "specialistKey": "baker2",
+    "name": "Vlastimil  Sedláček",
+    "vocation": "baker",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/81/9f/56/819f56080fbe5897755269df252375f3.jpg"
+  },
+  "blacksmith1": {
+    "specialistKey": "blacksmith1",
+    "name": "Jonáš  Pospíchal",
+    "vocation": "blacksmith",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/fe/58/8d/fe588dc99c69f43ca13622485d1d80d7.jpg"
+  },
+  "blacksmith2": {
+    "specialistKey": "blacksmith2",
+    "name": "Tamara  Hlaváčová",
+    "vocation": "blacksmith",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://orig00.deviantart.net/2de9/f/2013/194/3/7/female_blacksmith_by_thomaswievegg-d6d9jxk.jpg"
+  },
+  "blacksmith3": {
+    "specialistKey": "blacksmith3",
+    "name": "Dominik  Podlezl",
+    "vocation": "blacksmith",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/fe/58/8d/fe588dc99c69f43ca13622485d1d80d7.jpg"
+  },
+  "blacksmith4": {
+    "specialistKey": "blacksmith4",
+    "name": "Taťána  Kratochvílová",
+    "vocation": "blacksmith",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://orig00.deviantart.net/2de9/f/2013/194/3/7/female_blacksmith_by_thomaswievegg-d6d9jxk.jpg"
+  },
+  "brewer1": {
+    "specialistKey": "brewer1",
+    "name": "Zora  Šimonová",
+    "vocation": "brewer",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/236x/e1/f1/2f/e1f12f97b91eb3101c867625c40b68e6.jpg"
+  },
+  "brewer2": {
+    "specialistKey": "brewer2",
+    "name": "Žaneta  Vítová",
+    "vocation": "brewer",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/236x/e1/f1/2f/e1f12f97b91eb3101c867625c40b68e6.jpg"
+  },
+  "commander1": {
+    "specialistKey": "commander1",
+    "name": "Adolf  Sládek",
+    "vocation": "commander",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/02/06/ae/0206ae7811f7c430a90652f45689c10f.jpg"
+  },
+  "commander2": {
+    "specialistKey": "commander2",
+    "name": "Tibor  Soukup",
+    "vocation": "commander",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/02/06/ae/0206ae7811f7c430a90652f45689c10f.jpg"
+  },
+  "commander3": {
+    "specialistKey": "commander3",
+    "name": "Marián  Matoušek",
+    "vocation": "commander",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/02/06/ae/0206ae7811f7c430a90652f45689c10f.jpg"
+  },
+  "innkeaper1": {
+    "specialistKey": "innkeaper1",
+    "name": "Ema  Tesařová",
+    "vocation": "innkeeper",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/474x/ee/ae/55/eeae558bd0779975fd14885ae6ed565d--jester-character-art.jpg"
+  },
+  "innkeaper2": {
+    "specialistKey": "innkeaper2",
+    "name": "Liliana  Vávrová",
+    "vocation": "innkeeper",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/474x/ee/ae/55/eeae558bd0779975fd14885ae6ed565d--jester-character-art.jpg"
+  },
+  "innkeaper3": {
+    "specialistKey": "innkeaper3",
+    "name": "Květa  Málková",
+    "vocation": "innkeeper",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/474x/ee/ae/55/eeae558bd0779975fd14885ae6ed565d--jester-character-art.jpg"
+  },
+  "medicus1": {
+    "specialistKey": "medicus1",
+    "name": "Dorota  Dohnalová",
+    "vocation": "medicus",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/44/42/37/4442373e48da38bd673cf618ba01c64a.jpg"
+  },
+  "medicus2": {
+    "specialistKey": "medicus2",
+    "name": "Klaudie  Hájková",
+    "vocation": "medicus",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/44/42/37/4442373e48da38bd673cf618ba01c64a.jpg"
+  },
+  "priest1": {
+    "specialistKey": "priest1",
+    "name": "Bohuslav  Rýpal",
+    "vocation": "priest",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/58/d8/73/58d873aa9eae0b43eef4b3990fd67751.png"
+  },
+  "priest2": {
+    "specialistKey": "priest2",
+    "name": "Hugo  Bureš",
+    "vocation": "priest",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/58/d8/73/58d873aa9eae0b43eef4b3990fd67751.png"
+  },
+  "priest3": {
+    "specialistKey": "priest3",
+    "name": "Vojtěch  Lukeš",
+    "vocation": "priest",
+    "cost": "3x gold",
+    "bonus": "",
+    "image": "https://i.pinimg.com/originals/58/d8/73/58d873aa9eae0b43eef4b3990fd67751.png"
+  }
+}

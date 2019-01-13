@@ -1,0 +1,234 @@
+{
+  "man-1": {
+    "key": "man-1",
+    "name": "Vojtěch Zacpal",
+    "image": "https://vignette.wikia.nocookie.net/almonte/images/3/3d/Farmer.png/revision/latest?cb=20170627213824",
+    "cost": 1,
+    "advantages": [
+      "double production"
+    ],
+    "disadvantages": [
+      "can only work in agriculture"
+    ]
+  },
+  "man-2": {
+    "key": "man-2",
+    "name": "Augustýn Janoušek",
+    "image": "https://banner2.kisspng.com/20180709/kgk/kisspng-the-dark-eye-pathfinder-roleplaying-game-dungeons-fortnite-schwarzer-ritter-skin-5b42ecd36f85f2.9561639715311126594568.jpg",
+    "cost": 1.5,
+    "advantages": [
+      "costs 1/2 [gold] if working in agriculture"
+    ]
+  },
+  "man-3": {
+    "key": "man-3",
+    "name": "Kryštof Staněk",
+    "image": "https://i.pinimg.com/originals/77/ad/1a/77ad1a414af8a5c40880dd73a7871285.jpg",
+    "cost": 1,
+    "advantages": [
+      "+1 bonus on animal husbandry"
+    ],
+    "disadvantages": [
+      "cannot work as a butcher"
+    ]
+  },
+  "man-4": {
+    "key": "man-4",
+    "name": "Felix Pospíšil",
+    "image": "https://i.pinimg.com/originals/79/8b/10/798b100ea9b41a2c043a5d2c9315d6b2.jpg",
+    "cost": 0,
+    "disadvantages": [
+      "costs 2 of any resource"
+    ]
+  },
+  "man-5": {
+    "key": "man-5",
+    "name": "Gustav Bednář",
+    "image": "http://i.4pcdn.org/tg/1379827936438.jpg",
+    "cost": 1,
+    "advantages": [
+      "As a butcher makes +4 [food] and +2 [leather]"
+    ]
+  },
+  "man-6": {
+    "key": "man-6",
+    "name": "Kamil Jeřábek",
+    "image": "https://i.pinimg.com/736x/06/05/a3/0605a319d610cb65f0d7f343f27b0194--character-portraits-character-art.jpg",
+    "cost": 0.5,
+    "disadvantages": [
+      "1/6 chance of no production and no cost"
+    ]
+  },
+  "man-7": {
+    "key": "man-7",
+    "name": "Vladislav Rýpal",
+    "image": "https://i.pinimg.com/originals/32/dc/e0/32dce0acfc1907059625f08a647eba69.jpg",
+    "cost": 1.5,
+    "advantages": [
+      "double production in a smithy"
+    ]
+  },
+  "man-8": {
+    "key": "man-8",
+    "name": "Denis Kadlec",
+    "image": "https://i.pinimg.com/originals/15/07/76/150776b13aa27b5886ec2e741796a2d3.jpg",
+    "cost": 1
+  },
+  "man-9": {
+    "key": "man-9",
+    "name": "Štefan Doskočil",
+    "image": "https://i.pinimg.com/236x/cd/df/51/cddf5163c3eb52e24c4b45602d36c66e--game-concept-character-concept.jpg",
+    "cost": 0.5,
+    "disadvantages": [
+      "is wounded permanently"
+    ]
+  },
+  "man-10": {
+    "key": "man-10",
+    "name": "Miloš Mareš",
+    "image": "https://vignette.wikia.nocookie.net/joanix-univers/images/5/5a/350f57f9b486739dab98ad51fc1a81a6.jpg/revision/latest?cb=20170424104821&path-prefix=es",
+    "cost": 1.5,
+    "advantages": [
+      "+1 building capacity"
+    ]
+  },
+  "man-11": {
+    "key": "man-11",
+    "name": "Mojmír Doskočil",
+    "image": "https://i.pinimg.com/originals/9a/36/9e/9a369e068ef6db8e0b6f2de8254f3097.jpg",
+    "cost": 1.5,
+    "advantages": [
+      "counts as 2 soldiers"
+    ],
+    "disadvantages": [
+      "cannot work in religion"
+    ]
+  },
+  "man-12": {
+    "key": "man-12",
+    "name": "Šimon Sedláček",
+    "image": "https://i.pinimg.com/originals/fe/54/46/fe5446e28aa40c611b39489097a4e137.jpg",
+    "cost": 1,
+    "disadvantages": [
+      "Every 5th produced resource is lost"
+    ]
+  },
+  "woman-1": {
+    "key": "woman-1",
+    "name": "Viktorie Kubešová",
+    "image": "https://i.pinimg.com/originals/30/aa/b2/30aab2efa194898b595d845688286842.jpg",
+    "cost": 2,
+    "advantages": [
+      "Produces +1 [happiness] in Inn"
+    ]
+  },
+  "woman-2": {
+    "key": "woman-2",
+    "name": "Sára Hovorková",
+    "image": "https://i.pinimg.com/originals/e1/f1/2f/e1f12f97b91eb3101c867625c40b68e6.png",
+    "cost": 1,
+    "advantages": [
+      "Produces 1 extra [herb] or [medicine]"
+    ],
+    "disadvantages": [
+      "cannot work in military"
+    ]
+  },
+  "woman-3": {
+    "key": "woman-3",
+    "name": "Darja Daňková",
+    "image": "https://i.pinimg.com/736x/ee/ae/55/eeae558bd0779975fd14885ae6ed565d--jester-character-art.jpg",
+    "cost": 0.5,
+    "disadvantages": [
+      "cannot work in primary production"
+    ]
+  },
+  "woman-4": {
+    "key": "woman-4",
+    "name": "Alice Kasnarová",
+    "image": "https://i.pinimg.com/236x/60/32/84/603284c63340fee0049118b5417d6345--character-creation-character-ideas.jpg",
+    "cost": 1,
+    "advantages": [
+      "Works in religious buildings for free"
+    ],
+    "disadvantages": [
+      "cannot work in military"
+    ]
+  },
+  "woman-5": {
+    "key": "woman-5",
+    "name": "Zita Pykalová",
+    "image": "https://i.pinimg.com/originals/cc/f8/e8/ccf8e80a8483c593bb808911c890aa9d.png",
+    "cost": 0.5,
+    "disadvantages": [
+      "cannot work alone in a building"
+    ]
+  },
+  "woman-6": {
+    "key": "woman-6",
+    "name": "Oldřiška Tomanová",
+    "image": "https://i.pinimg.com/736x/a6/59/1c/a6591cc881ae2242948bf8429a396165--pathfinder-rpg-character-art.jpg",
+    "cost": 0.5,
+    "disadvantages": [
+      "cannot work with animals"
+    ]
+  },
+  "woman-7": {
+    "key": "woman-7",
+    "name": "Anastázie Martinková",
+    "image": "https://i.pinimg.com/originals/98/79/71/987971c4fa4b5dde3681bace5ee00c72.png",
+    "cost": 1.5,
+    "advantages": [
+      "produces +1 [clothes] as a tailor"
+    ]
+  },
+  "woman-8": {
+    "key": "woman-8",
+    "name": "Karina Jedličková",
+    "image": "https://i.pinimg.com/originals/aa/0f/ac/aa0face0b228dd5b32da242bf45c0d4d.png",
+    "cost": 1
+  },
+  "woman-9": {
+    "key": "woman-9",
+    "name": "Olga Smetanová",
+    "image": "https://i.pinimg.com/originals/68/c1/ca/68c1cabad9ec6e944980025d222edb45.png",
+    "cost": 1,
+    "disadvantages": [
+      "-1 [happiness] if employed in summer"
+    ]
+  },
+  "woman-10": {
+    "key": "woman-10",
+    "name": "Božena Burianová",
+    "image": "https://i.pinimg.com/originals/f0/56/eb/f056eb5c03051cbc12c6217f1c390be6.png",
+    "cost": 1.5,
+    "advantages": [
+      "Can copy coworkers advantage"
+    ]
+  },
+  "woman-11": {
+    "key": "woman-11",
+    "name": "Ema Čechová",
+    "image": "https://i.pinimg.com/736x/0c/85/e2/0c85e244914fdea34a2be843a8d24c25--warhammer-fantasy-fantasy-rpg.jpg",
+    "cost": 1,
+    "advantages": [
+      "Can look at 2 expedition cards and pick one"
+    ],
+    "disadvantages": [
+      "Has to pick pirates"
+    ]
+  },
+  "woman-12": {
+    "key": "woman-12",
+    "name": "Slavěna Daňková",
+    "image": "https://i.pinimg.com/originals/c3/9b/3b/c39b3b03e46c524904113808ba3e244b.jpg",
+    "cost": 2,
+    "advantages": [
+      "+1 [happiness] if employed"
+    ],
+    "disadvantages": [
+      "cannot work in religious buildings",
+      "cannot produce resources"
+    ]
+  }
+}

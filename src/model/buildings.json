@@ -1,0 +1,201 @@
+{
+  "stables": {
+    "buildingKey": "stables",
+    "label": "Stables",
+    "cs": "Stáje",
+    "price": "2x stone, 6x wood",
+    "requirements": "barracks",
+    "capacityType": "horse or cattle",
+    "capacity": 5,
+    "image": "https://img2.cgtrader.com/items/220226/98e6e9d300/medieval-village-stable-3d-model-low-poly-obj-3ds-fbx-blend-X-mtl.jpg"
+  },
+  "inn": {
+    "buildingKey": "inn",
+    "label": "Inn",
+    "cs": "Hostinec",
+    "price": "2x stone, 3x wood",
+    "capacityType": "peasant",
+    "capacity": 1,
+    "image": "https://www.renderhub.com/zb3d/medieval-city-house-05/medieval-city-house-05-01.jpg"
+  },
+  "chapel": {
+    "buildingKey": "chapel",
+    "label": "Chapel",
+    "cs": "Kaple",
+    "price": "3x stone, 2x wood, 5x gold",
+    "effect": "Happiness +1, when occupied",
+    "capacityType": "peasant",
+    "capacity": 1,
+    "image": "https://s3.envato.com/files/60486570/Preview%20Image.jpg"
+  },
+  "church": {
+    "buildingKey": "church",
+    "label": "Church",
+    "cs": "Kostel",
+    "price": "6x stone, 4x wood, 10x gold",
+    "effect": "Happiness +1, 1 gold per 2 population, when occupied",
+    "capacityType": "peasant",
+    "capacity": 1,
+    "image": "https://s-media-cache-ak0.pinimg.com/736x/b7/aa/e9/b7aae923b72c557ba790d6110e4c8f95.jpg"
+  },
+  "lazaret": {
+    "buildingKey": "lazaret",
+    "label": "Lazaret",
+    "cs": "Lazaret",
+    "price": "4x wood, 2x tools",
+    "capacityType": "peasant",
+    "capacity": 5,
+    "image": "http://www.histogames.com/images/news/aout2016/032/image-2.jpg"
+  },
+  "mine": {
+    "buildingKey": "mine",
+    "label": "Mine",
+    "cs": "Důl",
+    "price": "4x wood, 1x stone",
+    "capacityType": "peasant",
+    "capacity": 5,
+    "image": "https://i.pinimg.com/originals/07/79/f4/0779f446a023ce3d4c53c911797ab73c.jpg"
+  },
+  "quarry": {
+    "buildingKey": "quarry",
+    "label": "Quarry",
+    "cs": "Lom",
+    "price": "5x wood",
+    "capacityType": "peasant",
+    "capacity": 5,
+    "image": "https://www.kingdomcomerpg.com/file/edee/2016/03/kcd_quarry_logo.jpg"
+  },
+  "sawmill": {
+    "buildingKey": "sawmill",
+    "label": "Sawmill",
+    "cs": "Pila",
+    "price": "3x wood, 1x tools",
+    "capacityType": "peasant",
+    "capacity": 5,
+    "image": "https://img2.cgtrader.com/items/220232/d8d246ed47/medieval-village-sawmill-3d-model-low-poly-obj-3ds-fbx-blend-X-mtl.jpg"
+  },
+  "farm": {
+    "buildingKey": "farm",
+    "label": "Farm",
+    "cs": "farm",
+    "price": "4x wood, 1x tools",
+    "capacityType": "peasant",
+    "capacity": 5,
+    "image": "https://img1.cgtrader.com/items/220378/bd91bee498/large/medieval-farm-house-3-3d-model-low-poly-obj-3ds-fbx-blend-X-ms3d.jpg"
+  },
+  "tailor": {
+    "buildingKey": "tailor",
+    "label": "Tailor",
+    "cs": "Krejčovství",
+    "price": "2x stone, 2x wood, 1x tools",
+    "capacityType": "peasant",
+    "capacity": 5,
+    "image": "https://mirye.net/media/com_hikashop/upload/MEA2V107-01.jpg"
+  },
+  "bakery": {
+    "buildingKey": "bakery",
+    "label": "Bakery",
+    "cs": "Pekařství",
+    "price": "2x stone, 2x wood",
+    "capacityType": "peasant",
+    "capacity": 4,
+    "image": "https://img1.cgtrader.com/uploads/user/302130/forum_images/5250e491-ff3f-41f0-b864-10ca3e7df7e0.png"
+  },
+  "brewery": {
+    "buildingKey": "brewery",
+    "label": "Brewery",
+    "cs": "Pivovar",
+    "price": "2x stone, 2x wood, 2x metal",
+    "capacityType": "peasant",
+    "capacity": 4,
+    "image": "https://bw-1651cf0d2f737d7adeab84d339dbabd3-bcs.s3.amazonaws.com/products/product_112407/product_image_full_304535_36c1ac5d22640688398a353584785cb7.jpg"
+  },
+  "harbor": {
+    "buildingKey": "harbor",
+    "label": "Harbor",
+    "cs": "Přístav",
+    "price": "2x stone, 4x wood",
+    "image": "https://static.turbosquid.com/Preview/001294/282/68/_D.jpg"
+  },
+  "smithy": {
+    "buildingKey": "smithy",
+    "label": "Smithy",
+    "cs": "Kovářství",
+    "price": "2x stone, 2x wood, 2x metal",
+    "capacityType": "peasant",
+    "capacity": 4,
+    "image": "https://bw-1651cf0d2f737d7adeab84d339dbabd3-bcs.s3.amazonaws.com/products/product_105089/product_image_full_242487_ed87dc7135828495df7d5548f7f61699.jpg"
+  },
+  "butchery": {
+    "buildingKey": "butchery",
+    "label": "Butchery",
+    "cs": "Řeznictví",
+    "price": "2x stone, 2x wood, 1x tools",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/A_Meat_Stall_with_the_Holy_Family_Giving_Alms_-_Pieter_Aertsen_-_Google_Cultural_Institute.jpg"
+  },
+  "townHall": {
+    "buildingKey": "townHall",
+    "label": "Town Hall",
+    "cs": "Radnice",
+    "price": "5x stone, 3x wood, 5x gold",
+    "effect": "Starts first elections",
+    "image": "https://i.pinimg.com/originals/76/52/3d/76523dc6553c5e13ccc53af1f794437c.jpg"
+  },
+  "barracks": {
+    "buildingKey": "barracks",
+    "label": "Barracks",
+    "cs": "Kasárny",
+    "price": "3x stone, 3x wood",
+    "capacityType": "peasant",
+    "capacity": 4,
+    "image": "https://orig00.deviantart.net/a053/f/2014/287/a/8/royal_armory_by_anthonyavon-d81qngc.png"
+  },
+  "werehouse": {
+    "buildingKey": "werehouse",
+    "label": "Werehouse",
+    "cs": "Skladiště",
+    "price": "1x stone, 2x wood",
+    "capacityType": "goods",
+    "capacity": 20,
+    "image": "https://www.3dmodels-textures.com/image/cache/assets/3DModels-Textures/Medieval%20Village%201.389/image/render-4-900x675.jpg"
+  },
+  "fishingBoat": {
+    "buildingKey": "fishingBoat",
+    "label": "Fishing boat",
+    "cs": "Rybářská loď",
+    "price": "2x wood",
+    "capacityType": "peasant",
+    "capacity": 1,
+    "image": "https://modernbenjamin.files.wordpress.com/2015/07/wpid-2015-07-24-13-32-39.png"
+  },
+  "knarr": {
+    "buildingKey": "knarr",
+    "label": "Knarr",
+    "cs": "Knarr",
+    "price": "2x wood, 1x fabric",
+    "effect": "Can transport 10 units of 1 type of goods",
+    "capacityType": "peasant",
+    "capacity": 2,
+    "image": "https://i1.wp.com/about-history.com/wp-content/uploads/2017/03/Knarr-The-Oldest-Norse-Merchant-Ship.jpg?fit=720%2C405&ssl=1"
+  },
+  "cog": {
+    "buildingKey": "cog",
+    "label": "Cog",
+    "cs": "Cog",
+    "price": "4x wood, 2x fabric",
+    "effect": "Can transport 15 units of 2 types of goods",
+    "capacityType": "peasant",
+    "capacity": 4,
+    "image": "https://static.turbosquid.com/Preview/001149/651/BV/medieval-ship-cog-3D_0.jpg"
+  },
+  "carrack": {
+    "buildingKey": "carrack",
+    "label": "Carrack",
+    "cs": "Carrack",
+    "price": "8x wood, 4x fabric",
+    "effect": "Can transport 20 units of 3 type of goods",
+    "capacityType": "peasant",
+    "capacity": 6,
+    "image": "https://www.mediastorehouse.com/p/473/carrack-merchant-ship-late-1400s-5886545.jpg"
+  }
+}

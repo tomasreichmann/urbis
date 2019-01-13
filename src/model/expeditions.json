@@ -1,0 +1,218 @@
+{
+  "navalBlockade": {
+    "key": "navalBlockade",
+    "name": "Naval blockade",
+    "count": 1,
+    "type": "eventDanger",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 10 [gold]",
+    "threatDanger": "return to town"
+  },
+  "hullDamage": {
+    "key": "hullDamage",
+    "name": "Hull damage",
+    "count": 1,
+    "type": "eventDanger",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 1 [wood]",
+    "threatDanger": "loose all of one type of cargo"
+  },
+  "foodPoisoning": {
+    "key": "foodPoisoning",
+    "name": "Food poisoning",
+    "count": 1,
+    "type": "eventDanger",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 1 [alcohol], 1 [medicine] or 3 [food]",
+    "threatDanger": "return to town"
+  },
+  "storm": {
+    "key": "storm",
+    "name": "Storm",
+    "count": 1,
+    "type": "eventDanger",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 1 [fabric], 3 [wood] or 3 [crops]",
+    "threatDanger": "wound one sailor"
+  },
+  "repairLighthouse": {
+    "key": "repairLighthouse",
+    "name": "Repair lighthouse",
+    "count": 1,
+    "type": "eventMixed",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 2 [wood], 2 [stone] or 2 [metal] from town",
+    "threatReward": "draw 2 expedition cards, discard 1, reveal the other",
+    "threatDanger": "50% chance to loose all cargo"
+  },
+  "blackPassanger": {
+    "key": "blackPassanger",
+    "name": "Black passanger",
+    "count": 1,
+    "type": "eventMixed",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "have at least 1 soldier",
+    "threatReward": "get 1 resource of your choice",
+    "threatDanger": "loose one unit of each type of cargo"
+  },
+  "edibleSeaSerpent": {
+    "key": "edibleSeaSerpent",
+    "name": "Edible sea serpent",
+    "count": 1,
+    "type": "eventMixed",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "have at least 2 soldiers",
+    "threatReward": "get 10 [food]",
+    "threatDanger": "loose 5 units of resources or wound 2 sailors"
+  },
+  "pirateAttack": {
+    "key": "pirateAttack",
+    "name": "pirateAttack",
+    "count": 1,
+    "type": "eventMixed",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "have at least 3 soldiers",
+    "threatReward": "get 3 [gold]",
+    "threatDanger": "loose all of one type of cargo"
+  },
+  "castaway": {
+    "key": "castaway",
+    "name": "Castaway",
+    "count": 1,
+    "type": "eventOpportunity",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 1 [alcohol], 1 [food] or 1 [medicine]",
+    "threatReward": "get 5 times of what you payed when you return to town"
+  },
+  "treasureMap": {
+    "key": "treasureMap",
+    "name": "Treasure map",
+    "count": 1,
+    "type": "eventOpportunity",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 1 [alcohol] or 5 [gold]",
+    "threatReward": "50% chance to get 2 [gold] for each soldier or nothing"
+  },
+  "piratePayback": {
+    "key": "piratePayback",
+    "name": "piratePayback",
+    "count": 1,
+    "type": "eventOpportunity",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "have at least 3 soldiers",
+    "threatReward": "get maximum amount your ship can carry of one type of random resource"
+  },
+  "raidPirateOutpost": {
+    "key": "raidPirateOutpost",
+    "name": "Raid pirate outpost",
+    "count": 1,
+    "type": "eventOpportunity",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "have at least 5 soldiers",
+    "threatReward": "get 1 [gold] and 1 resource of your choice per soldier"
+  },
+  "witchDoctor": {
+    "key": "witchDoctor",
+    "name": "Witchdoctor",
+    "count": 1,
+    "type": "eventOpportunity",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatChallenge": "pay 3 [gold]",
+    "threatReward": "50% chance to heal one sailor or nothing"
+  },
+  "flotsam": {
+    "key": "flotsam",
+    "name": "Flotsam",
+    "count": 1,
+    "type": "eventBenefit",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatReward": "gain 5 units of random resource"
+  },
+  "shipwreck": {
+    "key": "shipwreck",
+    "name": "Shipwreck",
+    "count": 1,
+    "type": "eventBenefit",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatReward": "gain 1 [gold] for each sailor"
+  },
+  "nothingButCalmSeas": {
+    "key": "nothingButCalmSeas",
+    "name": "Nothing but calm seas",
+    "count": 4,
+    "type": "neutral",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg"
+  },
+  "whales": {
+    "key": "whales",
+    "name": "Whales",
+    "count": 1,
+    "type": "permanent",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatReward": "gain 5 units of food"
+  },
+  "shipGraveyard": {
+    "key": "shipGraveyard",
+    "name": "Ship graveyard",
+    "count": 1,
+    "type": "permanent",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatReward": "gain 5 units of [wood] or [metal], or 2 units of [fabric]"
+  },
+  "ruins": {
+    "key": "ruins",
+    "name": "Ruins",
+    "count": 1,
+    "type": "permanent",
+    "image": "http://conceptartworld.com/wp-content/uploads/2018/03/The-Art-of-Sea-of-Thieves-M01-1140x500.jpg",
+    "threatReward": "gain 5 units of [stone] or 2 [gold]"
+  },
+  "plantationColony": {
+    "key": "plantationColony",
+    "name": "Plantation colony",
+    "count": 1,
+    "type": "permanent",
+    "image": "https://i.pinimg.com/originals/3b/8d/5c/3b8d5cee6890f1a087f1e2f2e84e53dd.jpg",
+    "market": "buy 20x [crops] for 0,5 [gold]; buy 10x [food] for 6 [gold]; buy 10x [fabric] for 2 [gold]; sell 10x [tools] for 14 [gold]; sell 20x [clothes] for 6 [gold]"
+  },
+  "miningColony": {
+    "key": "miningColony",
+    "name": "Mining colony",
+    "count": 1,
+    "type": "permanent",
+    "image": "https://i.pinimg.com/originals/3b/8d/5c/3b8d5cee6890f1a087f1e2f2e84e53dd.jpg",
+    "market": "buy 20x [wood] for 0,5 [gold]; buy 10x [stone] for 0,5 [gold]; buy 20x [metal] for 0,5 [gold]; sell 10x [food] for 6 [gold]; sell 10x [alcohol] for 4 [gold]"
+  },
+  "militaryOutpost": {
+    "key": "militaryOutpost",
+    "name": "Military outpost",
+    "count": 1,
+    "type": "permanent",
+    "image": "https://i.pinimg.com/originals/3b/8d/5c/3b8d5cee6890f1a087f1e2f2e84e53dd.jpg",
+    "market": "sell 30x [armaments] for 16 [gold]; sell 30x [food] for 6 [gold]; sell 10x [alcohol] for 7 [gold]"
+  },
+  "industrialTown": {
+    "key": "industrialTown",
+    "name": "Industrial town",
+    "count": 1,
+    "type": "permanent",
+    "image": "https://i.pinimg.com/originals/3b/8d/5c/3b8d5cee6890f1a087f1e2f2e84e53dd.jpg",
+    "market": "buy 5x [armaments] for 16 [gold]; buy 20x [tools] for 3,5 [gold]; buy 20x [fabric] for 4 [gold]; sell 10x [metal] for 2 [gold]; sell 20x [medicine] for 5 [gold]"
+  },
+  "commertialCity": {
+    "key": "commertialCity",
+    "name": "Commertial city",
+    "count": 1,
+    "type": "permanent",
+    "image": "https://i.pinimg.com/originals/3b/8d/5c/3b8d5cee6890f1a087f1e2f2e84e53dd.jpg",
+    "market": "buy 20x [clothes] for 3 [gold]; buy 10x [medicine] for 2,5 [gold]; sell 20x [alcohol] for 7 [gold]; sell 30x [food] for 6 [gold]; sell 20x [stone] for 2 [gold]"
+  },
+  "agriculturalTown": {
+    "key": "agriculturalTown",
+    "name": "Agricultural town",
+    "count": 1,
+    "type": "permanent",
+    "image": "https://i.pinimg.com/originals/3b/8d/5c/3b8d5cee6890f1a087f1e2f2e84e53dd.jpg",
+    "market": "buy 30x [crops] for 0,5 [gold]; buy 3x [cattle] for 6 [gold]; buy 10x [leather] for 3 [gold]; sell 10x [tools] for 7 [gold]; sell 10x [medicine] for 5 [gold]"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "wood": {
+    "productionKey": "wood",
+    "production": "5x wood",
+    "site": "sawmill"
+  },
+  "stone": {
+    "productionKey": "stone",
+    "production": "5x stone",
+    "site": "quarry"
+  },
+  "metal": {
+    "productionKey": "metal",
+    "production": "5x metal",
+    "site": "mine"
+  },
+  "crops": {
+    "productionKey": "crops",
+    "production": "5x crops",
+    "site": "farm"
+  },
+  "herbs": {
+    "productionKey": "herbs",
+    "production": "1x herbs",
+    "site": "farm"
+  },
+  "cattle": {
+    "productionKey": "cattle",
+    "production": "1x cattle",
+    "site": "stables"
+  },
+  "horse": {
+    "productionKey": "horse",
+    "production": "1x horse",
+    "site": "stables"
+  },
+  "foodFish": {
+    "productionKey": "foodFish",
+    "production": "1x food",
+    "site": "fishingBoat"
+  },
+  "foodCattle": {
+    "productionKey": "foodCattle",
+    "cost": "1x cattle",
+    "production": "11x food, 5x leather",
+    "site": "butchery"
+  },
+  "foodCrops": {
+    "productionKey": "foodCrops",
+    "cost": "1x crops",
+    "production": "1x food",
+    "site": "bakery"
+  },
+  "fabric": {
+    "productionKey": "fabric",
+    "cost": "1x crops",
+    "production": "2x fabric",
+    "site": "weaver"
+  },
+  "clothes": {
+    "productionKey": "clothes",
+    "cost": "2x fabric",
+    "production": "2x clothes",
+    "site": "tailor"
+  },
+  "tools": {
+    "productionKey": "tools",
+    "cost": "1x metal, 1x wood",
+    "production": "1x tools",
+    "site": "smithy"
+  },
+  "armaments": {
+    "productionKey": "armaments",
+    "cost": "1x metal, 1x wood, 1x leather",
+    "production": "1x armaments",
+    "site": "smithy"
+  },
+  "alcohol": {
+    "productionKey": "alcohol",
+    "cost": "2x crops, 1x herbs",
+    "production": "2x alcohol",
+    "site": "brewery"
+  },
+  "happinessAlcohol": {
+    "productionKey": "happinessAlcohol",
+    "cost": "1x alcohol",
+    "production": "+1 happiness",
+    "site": "inn"
+  },
+  "medicine": {
+    "productionKey": "medicine",
+    "cost": "1x herbs, 1x fabric",
+    "production": "2x medicine",
+    "site": "lazaret"
+  },
+  "footman": {
+    "productionKey": "footman",
+    "cost": "1x peasant, 1x armaments",
+    "production": "1x footman",
+    "site": "barracks"
+  },
+  "archer": {
+    "productionKey": "archer",
+    "cost": "1x footman, 1x wood",
+    "production": "1x archer",
+    "site": "archeryRange"
+  },
+  "cavalry": {
+    "productionKey": "cavalry",
+    "cost": "1x footman, 1x horse",
+    "production": "1x cavalry",
+    "site": "joustingArena"
+  },
+  "knight": {
+    "productionKey": "knight",
+    "cost": "1x footman, 1x horse, 1x armaments",
+    "production": "1x knight",
+    "site": "knightsChapter"
+  },
+  "healing": {
+    "productionKey": "healing",
+    "cost": "1x pacient, 1x medicine",
+    "production": "1x peasant",
+    "site": "lazaret"
+  },
+  "knarr": {
+    "productionKey": "knarr",
+    "cost": "2x wood, 1x fabric",
+    "production": "1x knarr",
+    "site": "harbor"
+  },
+  "cog": {
+    "productionKey": "cog",
+    "cost": "4x wood, 2x fabric",
+    "production": "1x cog",
+    "site": "harbor"
+  },
+  "carrack": {
+    "productionKey": "carrack",
+    "cost": "8x wood, 4x fabric",
+    "production": "1x carrack",
+    "site": "harbor"
+  }
+}
