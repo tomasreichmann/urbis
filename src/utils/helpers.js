@@ -33,6 +33,12 @@ export const normalizeToFunction = item => {
   return typeof item === "function" ? item : () => item;
 };
 
+export const duplicateItems = (arr, count) =>
+  arr.reduce((output, item) => {
+    output.push(...Array(count).fill(item));
+    return output;
+  }, []);
+
 export const itemsPerPage = ({
   item,
   page = paperSizes.portrait.A4,

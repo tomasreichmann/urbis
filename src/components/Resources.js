@@ -32,7 +32,11 @@ export class Resources extends React.PureComponent {
     return (
       <div className={classes.root}>
         {items.map(({ resourceKey, amount }) => (
-          <Typography className={classes.resource} {...typographyProps}>
+          <Typography
+            className={classes.resource}
+            {...typographyProps}
+            key={resourceKey}
+          >
             <ResourceIcon
               resourceKey={resourceKey}
               label={amount}

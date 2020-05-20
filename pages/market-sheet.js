@@ -1,16 +1,18 @@
 // @ts-check
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 import chunk from "lodash/chunk";
-
-import withRoot from "../src/withRoot";
-import Navigation from "../src/components/Navigation";
-import { pageStyles } from "../src/utils/styles";
-import PrintPage from "../src/components/PrintPage";
+import PropTypes from "prop-types";
+import React from "react";
 import Icon from "../src/components/icons/Icon";
-import { priceRanges, marketResourceOrder } from "../src/model/general";
+import Navigation from "../src/components/Navigation";
+import Stockpile, { stockpileDimensions } from "../src/components/Stockpile";
+import PrintPage from "../src/components/PrintPage";
+import { marketResourceOrder, priceRanges } from "../src/model/general";
+import { pageStyles } from "../src/utils/styles";
+import withRoot from "../src/withRoot";
+import { duplicateItems } from "../src/utils/helpers";
+
 // @ts-ignore
 const resources = require("../src/model/resources");
 
@@ -19,10 +21,10 @@ const styles = theme => ({
   goods: {
     display: "grid",
     alignItems: "center",
-    gridTemplateColumns: "4cm 3cm 3cm 1fr",
+    gridTemplateColumns: "4cm auto auto 1fr",
     justifyContent: "flex-start",
-    gridGap: `0.5cm`
-    // marginBottom: "0.5cm"
+    gridGap: `0.5cm`,
+    marginBottom: "0.5cm"
   },
   priceRange: {
     textAlign: "center"
@@ -36,6 +38,10 @@ const styles = theme => ({
   },
   label: {
     textAlign: "center"
+  },
+  stockpile: {
+    ...stockpileDimensions,
+    float: "left"
   }
 });
 
@@ -59,15 +65,18 @@ class MarketSheet extends React.Component {
             className={classes.priceRange}
             key={`${resourceKey} range ${priceRange}`}
           >
-            <div className={classes.block} />
-            <Typography
-              variant="title"
-              className={classes.price}
-              color="inherit"
-            >
-              <Icon
-                {...resources.gold}
-                label={resources[resourceKey].price[priceRange]}
+            <Typography variant="title" color="inherit">
+              <Stockpile
+                resourceProps={{
+                  resourceKey: "gold",
+                  label: resources[resourceKey].price[priceRange]
+                }}
+                rootProps={{
+                  style: {
+                    height: "3.5cm",
+                    width: priceRange === "low" ? "100%" : "3.5cm"
+                  }
+                }}
               />
             </Typography>
           </div>
@@ -90,6 +99,16 @@ class MarketSheet extends React.Component {
             </PrintPage>
           );
         })}
+        <PrintPage key="stockpiles">
+          {duplicateItems(
+            marketResourceOrder.filter(resourceKey => resourceKey !== "cattle"),
+            4
+          ).map((resourceKey, stockpileIndex) => (
+            <div className={classes.stockpile} key={stockpileIndex}>
+              <Stockpile resourceProps={{ resourceKey }} />
+            </div>
+          ))}
+        </PrintPage>
       </div>
     );
   }

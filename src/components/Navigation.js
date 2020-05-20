@@ -6,7 +6,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 
 const styles = theme => ({
   root: {
@@ -60,11 +59,6 @@ function Navigation(props) {
           <Link href="/buildings-sheet">
             <Button component="a" className={classes.button}>
               Buildings sheet
-            </Button>
-          </Link>
-          <Link href="/specialists-sheet">
-            <Button component="a" className={classes.button}>
-              Specialists sheet
             </Button>
           </Link>
           <Link href="/people">
